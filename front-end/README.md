@@ -10,4 +10,4 @@
 ```js
 <div className="text-main"></div>
 ```
-`main` - Lilita One (logo and main font)
+- `main` - Lilita One (logo and main font)
