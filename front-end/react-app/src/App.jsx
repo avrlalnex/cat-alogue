@@ -1,13 +1,14 @@
 
 import './App.css'
+import LoginForm from './Login/LoginForm'
 
 function App() {
   
 
   return (
     <>
-      <div className="border border-black w-full h-auto p-4">TAILWIND HEREZ</div>
 
+      <LoginForm></LoginForm>
     </>
   )
 }

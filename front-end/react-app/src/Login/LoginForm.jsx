@@ -1,4 +1,3 @@
-import React from 'react';
 import './LoginForm.css';
 import logo from './catalogue.png';
 
@@ -35,7 +34,7 @@ const LoginForm = () => {
           </form>
         </div>
         <div className="text-center mt-12">
-          <p className="text-sm font-bold text-white">Don't have an account?</p>
+          <p className="text-sm font-bold text-white"> Don&apos;t have an account?</p>
           <button type='button' className="px-4 py-2 text-orange-500 bg-white border border-orange-500 rounded-full hover:bg-orange-100 font-bold font-lilita focus:outline-none focus:ring w-32 mt-2">Sign up</button>
         </div>
       </div>
