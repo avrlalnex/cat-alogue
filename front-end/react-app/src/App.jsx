@@ -1,14 +1,13 @@
 
 import './App.css'
-import Header from './Header'
+import Home from './Home/Home'
 
 function App() {
   
 
   return (
     <>
-      <Header></Header>
-      <div className="border border-black w-full h-auto p-4 font-main">TAILWIND HEREZ</div>
+      <Home></Home>
 
     </>
   )
