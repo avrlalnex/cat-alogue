@@ -1,14 +1,16 @@
 
 import './App.css'
-import LoginForm from './Login/LoginForm'
+
+import Home from './Home/Home'
+
 
 function App() {
   
 
   return (
     <>
+      <Home></Home>
 
-      <LoginForm></LoginForm>
     </>
   )
 }

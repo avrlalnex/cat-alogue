@@ -6,7 +6,16 @@ export default {
     'node_modules/flowbite-react/lib/esm/**/*.js',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        'cat-primary':'#E6842C',
+        'cat-secondary':'#FFD6B0',
+
+      },
+      fontFamily:{
+        'main':'Lilita One'
+      }
+    },
   },
   plugins: [
     // eslint-disable-next-line no-undef
