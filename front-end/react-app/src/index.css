@@ -1,4 +1,14 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    @font-face {
+      font-family: 'Lilita One', 'sans-serif';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+    }
+  }
