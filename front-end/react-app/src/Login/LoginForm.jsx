@@ -1,9 +1,8 @@
-import './LoginForm.css';
-import logo from './catalogue.png';
+import logo from '../assets/catalogue.png';
 
 const LoginForm = () => {
   return (
-    <div className="flex justify-center items-center min-h-screen pb-12">
+    <div className="flex justify-center items-center min-h-screen pb-12 bg-[#e6842c]">
       <div className="flex flex-col items-center">
       <img src={logo} alt="Catalogue Logo" className='mb-4 w-[30rem] h-[15rem]'/>
 
