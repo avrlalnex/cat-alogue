@@ -1,17 +1,14 @@
 
 import logo from './assets/cat_icon.svg'
 import { Footer } from "flowbite-react";
-import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from "react-icons/bs";
+import { BsFacebook,  BsInstagram } from "react-icons/bs";
 
 
 const Footing = () => {
     return ( 
         <>
-        <div className="bg-cat-primary">
-       
-        </div>
 
-      <Footer container className='bg-cat-primary text-white'>
+      <Footer container className='bg-cat-primary text-white mt-10'>
       <div className="w-full bg-cat-primary">
         <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
             <Footer.Brand href="/" >
