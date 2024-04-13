@@ -10,6 +10,7 @@ export default {
       colors:{
         'cat-primary':'#E6842C',
         'cat-secondary':'#FFD6B0',
+        'cat-darker-primary':'#ba681e'
 
       },
       fontFamily:{
