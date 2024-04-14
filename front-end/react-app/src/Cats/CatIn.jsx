@@ -19,6 +19,7 @@ const CatIn = () => {
         CatImage: null,
         CatOwner: null,
         CatDescription: '',
+        CatBirthday: '',
       });
 
       
@@ -55,6 +56,7 @@ const CatIn = () => {
       form_data.append("CatLikes", formData.CatLikes)
       form_data.append("CatDislikes", formData.CatDislikes)
       form_data.append("CatDescription", formData.CatDescription)
+      form_data.append("CatBirthday", formData.CatBirthday)
       //form_data.append("CatOwner", formData.CatOwner)
       
 
@@ -91,7 +93,7 @@ const CatIn = () => {
                         </tr>
                     <tr>
                         <td className="title">Birthdate</td>
-                        <td className="w-1/6"><TextInput id="birthdate" type="date" required/></td>
+                        <td className="w-1/6"><TextInput id="birthdate" type="date" name = "CatBirthday" value =  {formData.CatBirthday} onChange = {handleChange} required/></td>
                         <td className="title w-24 leading-tight">Age (Years)</td>
                         <td className=" md:w-3"><TextInput className="w-16" id="age" type="number" placeholder="0" name = "CatAge" value = {formData.CatAge} onChange = {handleChange} required /></td>
                         <td className="title w-1/12">Gender</td>
