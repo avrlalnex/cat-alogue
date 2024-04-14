@@ -8,57 +8,70 @@ import { TextInput, Select, FileInput, Textarea} from "flowbite-react"
 const CatIn = () => {
 
     const [formData, setFormData] = useState({
-        catName: '',
-        catGender: '',
-        catAge: 0,
-        catBreed: '',
-        catColor: '',
-        catPersonality: '',
-        catLikes: '',
-        catDislikes: '',
-        catImage: null
+        CatName: '',
+        CatGender: '',
+        CatAge: 0,
+        CatBreed: '',
+        CatColor: '',
+        CatPersonality: '',
+        CatLikes: '',
+        CatDislikes: '',
+        CatImage: null,
+        CatOwner: null,
+        CatDescription: '',
       });
-
-    const [Image, setCatImage] = useState(null)
 
       
       const handleChange = (event) => {
         setFormData({
-          ...formData,
-          [event.target.name]: event.target.value
-      
-        })
-      }
+        ...formData,
+        [event.target.name] :event.target.value
+      })
+    }
 
-      const handleImageChange = (event) => {
-        console.log("hello")
-        setCatImage(event.target.files[0]);
-      };
+    const handleImageChange = (event) => {
+      setFormData({
+        ...formData,
+        CatImage: event.target.files[0]
+      })
+  
+    };
     
       
-      const handleSubmit = (event) => {
-        event.preventDefault();
-        setFormData(
-          {...formData,
-          catImage: Image
-          }
-        )
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      
+      console.log(formData)
+      let form_data = new FormData();
+      
 
-        console.log(formData);
-        //makes post request to api
-        axios.post('http://127.0.0.1:8000/cats/', formData),{
-          headers: {
-            'Content-Type': 'multipart/form-data'
-          }
+      form_data.append("CatImage", formData.CatImage, formData.CatImage.name)
+      form_data.append("CatName", formData.CatName)
+      form_data.append("CatGender", formData.CatGender)
+      form_data.append("CatAge", formData.CatAge)
+      form_data.append("CatBreed", formData.CatBreed)
+      form_data.append("CatColor", formData.CatColor)
+      form_data.append("CatPersonality", formData.CatPersonality)
+      form_data.append("CatLikes", formData.CatLikes)
+      form_data.append("CatDislikes", formData.CatDislikes)
+      form_data.append("CatDescription", formData.CatDescription)
+      //form_data.append("CatOwner", formData.CatOwner)
+      
+
+
+      //makes post request to api
+      axios.post('http://127.0.0.1:8000/cats/', form_data, {
+        headers: {
+          'content-type': 'multipart/form-data'
         }
-        
-        .then(response => 
-          {console.log(response)})
-        .catch(error => {
-          console.log(error)         
-        }
-        )
+      })  
+      .then(response => 
+        {console.log(response.data)})
+      .catch(error => {
+        console.log(error)         
       }
+      )
+    }
 
     return ( 
         <div className="bg-cat-secondary">
@@ -73,17 +86,17 @@ const CatIn = () => {
                     <tbody className="p-10 min-w-[40px]">
                     <tr>
                         <td className="w-1/12 sm:shrink-0 title">Name</td>
-                        <td colSpan={5} className="w-2/6 sm:shrink-0 "><TextInput id="name" type="name" name = "catName" value = {formData.catName} onChange = {handleChange} placeholder="Mocha Macias" required/></td>
+                        <td colSpan={5} className="w-2/6 sm:shrink-0 "><TextInput id="name" type="name" name = "CatName" value = {formData.CatName} onChange = {handleChange} placeholder="Mocha Macias" required/></td>
                         
                         </tr>
                     <tr>
                         <td className="title">Birthdate</td>
                         <td className="w-1/6"><TextInput id="birthdate" type="date" required/></td>
                         <td className="title w-24 leading-tight">Age (Years)</td>
-                        <td className=" md:w-3"><TextInput className="w-16" id="age" type="number" placeholder="0" name = "catAge" value = {formData.catAge} onChange = {handleChange} required /></td>
+                        <td className=" md:w-3"><TextInput className="w-16" id="age" type="number" placeholder="0" name = "CatAge" value = {formData.CatAge} onChange = {handleChange} required /></td>
                         <td className="title w-1/12">Gender</td>
                         <td className="w-2/12">
-                            <Select id="gender" name = "catGender" value = {formData.catGender} onChange = {handleChange} required>
+                            <Select id="gender" name = "CatGender" value = {formData.CatGender} onChange = {handleChange} required>
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
                                 <option value="unknown"> Unknown</option>
@@ -92,9 +105,9 @@ const CatIn = () => {
                     </tr>
                     <tr>
                         <td className="title">Breed</td>
-                        <td colSpan={2} className="w-1/6"><TextInput id="breed" type="name" placeholder="Orange" name = "catBreed" value = {formData.catBreed} onChange = {handleChange} required/></td>
+                        <td colSpan={2} className="w-1/6"><TextInput id="breed" type="name" placeholder="Orange" name = "CatBreed" value = {formData.CatBreed} onChange = {handleChange} required/></td>
                         <td className="title">Color</td>
-                        <td colSpan={2} className="w-1/6"><TextInput id="color" type="name" placeholder="Orange" name = "catColor" value = {formData.catColor} onChange = {handleChange} required/></td>                        
+                        <td colSpan={2} className="w-1/6"><TextInput id="color" type="name" placeholder="Orange" name = "CatColor" value = {formData.CatColor} onChange = {handleChange} required/></td>                        
                     </tr>
                     {/* <tr>
                         <td className="title">Address</td>
@@ -108,7 +121,7 @@ const CatIn = () => {
             <div className="mb-2 block title">
                 Upload Picture
             </div>
-            <FileInput id="file-upload"  onChange = {handleImageChange} />
+            <FileInput id="file-upload"  accept="image/png, image/jpeg"  onChange = {handleImageChange}/>
             </div>
 
             <div className="self-center w-3/5 flex flex-col overflow-x-auto bg-cat-primary p-10 rounded-lg">
@@ -116,15 +129,15 @@ const CatIn = () => {
                     <tbody className="p-10 min-w-[40px]">
                     <tr>
                         <td className="title w-1/6">Personality</td>
-                        <td ><TextInput id="personality" type="name" placeholder="Personality" name = "catPersonality" value = {formData.catPersonality} onChange = {handleChange} required/></td>
+                        <td ><TextInput id="personality" type="name" placeholder="Personality" name = "CatPersonality" value = {formData.CatPersonality} onChange = {handleChange} required/></td>
                     </tr>
                     <tr>
                         <td className="title">Likes</td>
-                        <td ><TextInput id="likes" type="name" placeholder="Likes" name = "catLikes" value = {formData.catLikes} onChange = {handleChange} required/></td>
+                        <td ><TextInput id="likes" type="name" placeholder="Likes" name = "CatLikes" value = {formData.CatLikes} onChange = {handleChange} required/></td>
                     </tr>
                     <tr>
                         <td className="title">Dislikes</td>
-                        <td ><TextInput id="dislikes" type="name" placeholder="Dislikes" name = "catDislikes" value = {formData.catDislikes} onChange = {handleChange} required/></td>
+                        <td ><TextInput id="dislikes" type="name" placeholder="Dislikes" name = "CatDislikes" value = {formData.CatDislikes} onChange = {handleChange} required/></td>
                     </tr>
                     </tbody>
                 </table>
@@ -133,7 +146,7 @@ const CatIn = () => {
                 <div className="mb-2 block title">
                     Description
                 </div>
-                <Textarea id="description" placeholder="Tell us about your furry friend! Anything special about them that you want to share?" className="p-3" required rows={4} name = "catDescription" value = {formData.catDescription} onChange = {handleChange} />
+                <Textarea id="description" placeholder="Tell us about your furry friend! Anything special about them that you want to share?" className="p-3" required rows={4} name = "CatDescription" value = {formData.CatDescription} onChange = {handleChange} />
             </div>
             <button type="submit" className="self-center px-10 py-3 text-lg bg-cat-primary font-main text-white rounded-full">Submit</button>
             
