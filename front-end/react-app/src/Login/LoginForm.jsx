@@ -1,3 +1,4 @@
+
 import './LoginForm.css';
 import logo from '../assets/cat_icon.svg'; 
 import React, {useState} from 'react';
@@ -32,7 +33,7 @@ const LoginForm = () => {
 
 
   return (
-    <div className="flex justify-center items-center min-h-screen pb-12">
+    <div className="flex justify-center items-center min-h-screen pb-12 bg-[#e6842c]">
       <div className="flex flex-col items-center">
         <img src={logo} alt="Catalogue Logo" className='mb-2 w-24 h-24'/> 
         <div className="text-lg text-white font-lilita mb-4">cat-alogue</div> 
