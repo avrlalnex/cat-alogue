@@ -8,6 +8,7 @@ import { TextInput, Select, FileInput, Textarea} from "flowbite-react"
 const CatOut = () => {
 
     const [images, setImages] = useState([]);
+    const [catDetails, setCatDetails] = useState([])
     
     useEffect(() => {
         // Define an async function to fetch data
@@ -19,7 +20,9 @@ const CatOut = () => {
                 const imageUrls = response.data.map(item => item.CatImage);
                 // Update state with the image URLs
                 setImages(imageUrls);
+                setCatDetails(response.data)
                 console.log(imageUrls);
+                console.log(response.data)
             } catch (error) {
                 // Handle errors
                 console.error('Error fetching images:', error);
@@ -35,9 +38,13 @@ const CatOut = () => {
 
         <div>
         <Header/>
-
-            {images.map(imageUrl => (
-                <img key={imageUrl} src={`http://127.0.0.1:8000/${imageUrl}`} alt="Image" />
+            
+            { //access catdetail by catDetail.key    Look at console.log for JSON keys
+            catDetails.map(catDetail => (
+                <div className = "flex">
+                    <img key={catDetail.CatImage} className = "w-40" src={`http://127.0.0.1:8000/${catDetail.CatImage}`} alt="Image" />
+                    <h2> {catDetail.CatName}</h2>
+                </div>
             ))}
         </div>
     )
