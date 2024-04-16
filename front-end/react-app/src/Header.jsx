@@ -1,5 +1,6 @@
 import { Navbar, Button } from "flowbite-react"
 import logo from './assets/cat_icon.svg'
+import {Link} from "react-router-dom"
 
 
 const Header = () => {
@@ -16,7 +17,7 @@ const Header = () => {
         <a href="/"> Cats </a>
         <a href="/"> About Us</a>
 
-        <Button color="light" pill className="px-4 h-8 text-cat-primary">Login</Button>
+        <Link to="/login"><Button color="light" pill className="px-4 h-8 text-cat-primary">Login</Button></Link>
         <Navbar.Toggle />
         
         </div>

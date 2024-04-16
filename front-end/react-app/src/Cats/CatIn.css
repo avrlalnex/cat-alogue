@@ -1,0 +1,15 @@
+tr,td{
+    padding:5px;
+    text-align: right;
+}
+td{
+    padding:0.4em;
+}
+InputText{
+    padding:0.4em;
+}
+.title{
+    font-family: Lilita One;
+    color:white;
+    font-size:large;
+}
