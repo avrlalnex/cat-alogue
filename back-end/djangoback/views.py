@@ -1,4 +1,5 @@
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
+from django.shortcuts import redirect, render
 from .models import Accounts, Cat
 from .serializers import AccountSerializer, CatSerializer
 from rest_framework.decorators import api_view
@@ -6,6 +7,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.parsers import MultiPartParser, FormParser
+from django.http import FileResponse
 
 @api_view(['GET', 'POST'])
 def account_list(request):
@@ -34,8 +36,15 @@ class PostView(APIView):
     parser_classes = (MultiPartParser, FormParser)
 
     def get(self, request, *args, **kwargs):
-            images = Cat.objects.all()
-            serializer = CatSerializer(images, many=True)
+            cats = Cat.objects.all()
+            #images = []
+
+            #for instance in cats:
+            #    if instance.CatImage:
+            #        images.append(instance.CatImage.image)
+
+          
+            serializer = CatSerializer(cats, many=True)
             return Response(serializer.data)
 
 
