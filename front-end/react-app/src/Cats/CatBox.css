@@ -1,0 +1,3 @@
+.orange-paw{
+    filter: brightness(0) saturate(100%) invert(67%) sepia(40%) saturate(3457%) hue-rotate(342deg) brightness(95%) contrast(89%);
+}

@@ -6,6 +6,7 @@ import Login from './Login/LoginForm.jsx';
 import CatIn from './Cats/CatIn.jsx';
 import './index.css'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import CatsPage from './Cats/CatsPage.jsx';
 
 const router = createBrowserRouter(
  [{
@@ -21,6 +22,9 @@ const router = createBrowserRouter(
  },{
   path:"/cat/add",
   element: <CatIn/>
+ },{
+  path:"/cat",
+  element:<CatsPage/>
  }
 ])
 
