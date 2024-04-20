@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom'; 
 import paw from '../assets/Paw Pattern.svg'; 
 import cat1 from '../assets/cat1.png';
 import cat2 from '../assets/cat2.png';
