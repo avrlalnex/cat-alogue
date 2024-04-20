@@ -6,7 +6,7 @@ import catpic from '../assets/mocha_sample.jpeg'
 const CatProfile = () => {
     return ( <>
     <Header/>
-    <div className="h-auto py-10 font-main flex lg:flex-row md:flex-col sm:flex-col gap-10 justify-center bg-cat-secondary w-full">
+    <div className="h-auto py-10 font-main flex lg:flex-row md:flex-col sm:flex-col lg:gap-10 md:gap-3 sm:gap-3 justify-center bg-cat-secondary w-full">
         <div className="p-10 flex flex-col gap-2 lg:w-2/4 md:w-full sm:w-full">
             
             {/* CAT PROFILE */}
@@ -62,8 +62,8 @@ const CatProfile = () => {
                 <div className="lg:col-span-5 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary text-cat-details text-sm rounded-lg bg-cat-secondary">Bangkal, Davao City</div>
                 </div>
         </div>
-        <div className="w-1/4 bg-cat-secondary p-10 flex flex-col gap-6">
-        <div className = "w-full aspect-square overflow-hidden rounded-full mb-5"> 
+        <div className="lg:w-1/4 md:w-full bg-cat-secondary lg:p-10 md:px-20 sm:px-20 flex flex-col gap-6">
+        <div className = "lg:w-full lg:scale-100 md:scale-75 sm:scale-75 aspect-square overflow-hidden rounded-full lg:mb-5 md:mb-2"> 
             <img src={catpic} alt="sample cat" className="w-full"/>
         </div>
         
