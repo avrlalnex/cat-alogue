@@ -24,7 +24,13 @@ const LoginForm = () => {
     //makes get request to api to check credentials
     axios.post('http://127.0.0.1:8000/login/', formData)
     .then(response => {
-      console.log(response.data)
+      if(response.data == 'Account was not found' || response.data == "Wrong Password"){
+        console.log("error")
+      }
+      else{
+        localStorage.setItem("username", response.data.username)
+        window.location.href = 'http://localhost:5173/cat'
+      }
     }
   )
       
