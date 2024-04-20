@@ -49,16 +49,17 @@ const CatsPage = () => {
             <span className="text-6xl text-cat-primary font-main">The Cats</span>
             <div className="mt-10 rounded-3xl h-auto p-10 py-14 bg-cat-primary/30 ">
                 <div className="grid grid-cols-4 gap-7 place-items-center justify-items-center pl-5 auto-cols-max">
-                <Catbox featured="0" favorite="false" name="Mocha"/>
-                <Catbox featured="0" favorite="false" name="Mocha"/>
-                <Catbox featured="0" favorite="false" name="Mocha"/>
-                <Catbox featured="0" favorite="false" name="Mocha"/>
-                <Catbox featured="0" favorite="false" name="Mocha"/>
-                <Catbox featured="0" favorite="false" name="Mocha"/>
-                <Catbox featured="0" favorite="false" name="Mocha"/>
-                <Catbox featured="0" favorite="false" name="Mocha"/>
-                <Catbox featured="0" favorite="false" name="Mocha"/>
-                <Catbox featured="0" favorite="false" name="Mocha"/>
+                
+        
+                { //access catdetail by catDetail.key    Look at console.log for JSON keys
+                catDetails.map(catDetail => (
+                    
+                        <Catbox featured = "0" favorite = "false" name = {catDetail.CatName} image = {`http://127.0.0.1:8000/${catDetail.CatImage}`}/>
+                  
+                    ))
+                }
+
+                
                 <Catbox featured="0" favorite="false" name="Mocha"/>
                 </div>
             </div>

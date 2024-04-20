@@ -4,7 +4,7 @@ from .models import Accounts, Cat, Owner, CatImage
 class AccountSerializer(serializers.ModelSerializer):
     class Meta:
         model = Accounts
-        fields = ['id','username', 'password', 'email_address']
+        fields = ['id', 'username', 'password', 'email_address', 'catOwner', 'favoriteCats']
 
 class CatSerializer (serializers.ModelSerializer):
     class Meta:
