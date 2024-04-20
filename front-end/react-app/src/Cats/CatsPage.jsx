@@ -34,6 +34,7 @@ const CatsPage = () => {
         // Call the async function inside useEffect
         fetchData();
     }, []);
+    
     return ( <>
     <Header/>
     
