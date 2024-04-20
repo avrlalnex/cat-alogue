@@ -1,20 +1,15 @@
 import Header from "../Header";
 import Footing from "../Footing";
-import Filter from "../Cats/Filter";
-import Catbox from "../Cats/CatBox";
+import AccountSidebar from "./AccountSidebar";
 
 const AccountProfile = () => {
     return ( <>
     
         <Header/>
-        <div className="bg-cat-secondary h-screen flex flex-row justify-center">
-            <div className="border border-black h-auto w-3/4 flex flex-row p-20">
-                <div className="w-1/4 h-full flex flex-col gap-3">
-                    <Filter drop="0" name="Profile"/>
-                    <Filter drop="0" name="Favorites"/>
-                    <Filter drop="0" name="My Cats"/>
-                    <Filter drop="0" name="Settings"/>
-                </div>
+        <div className="bg-cat-secondary h-auto flex flex-row justify-center font-main">
+            <div className="h-auto w-3/4 flex flex-row p-20">
+                <AccountSidebar />
+
                 <div className="w-full h-auto">
                 <span className="text-5xl text-cat-primary font-main">My Profile</span>
                 <div className="mt-5 rounded-3xl h-auto p-10 py-14 bg-cat-primary/30 ">

@@ -26,9 +26,9 @@ const Filter = (props) => {
             <Dropdown.Item>Persian</Dropdown.Item>
             <Dropdown.Item>Orange</Dropdown.Item>
         </Dropdown> :
-        <div className="w-fit cursor-pointer text-lg rounded-full bg-white text-center flex px-5 py-2 text-cat-primary font-main">
+        <a href={props.link}><div className="w-fit cursor-pointer text-lg rounded-full bg-white text-center flex px-5 py-2 text-cat-primary font-main">
         <div className="text-center w-32">{props.name}</div>
-        </div>
+        </div></a>
         }
 
 {/*         

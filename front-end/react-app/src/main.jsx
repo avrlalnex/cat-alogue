@@ -9,6 +9,8 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import CatsPage from './Cats/CatsPage.jsx';
 import CatProfile from './Cats/CatProfile.jsx';
 import AccountProfile from './Account/AccountProfile.jsx';
+import AccountFave from './Account/AccountFave.jsx';
+import AccountCats from './Account/AccountCats.jsx';
 
 const router = createBrowserRouter(
  [{
@@ -32,8 +34,16 @@ const router = createBrowserRouter(
   element:<CatProfile/>
  },
  {
-  path:"/account",
+  path:"/profile/view",
   element:<AccountProfile/>
+ },
+ {
+  path:"/profile/favorites",
+  element:<AccountFave/>
+ },
+ {
+  path:"/profile/cats",
+  element:<AccountCats/>
  }
 ])
 
