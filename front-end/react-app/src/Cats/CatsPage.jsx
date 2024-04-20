@@ -6,6 +6,7 @@ import Banner from "./Banner";
 import WeeklyCats from "./WeeklyCats";
 import Filter from "./Filter";
 import Catbox from "./CatBox";
+import CatGallery from "./CatGallery";
 
 
 const CatsPage = () => {
@@ -54,11 +55,11 @@ const CatsPage = () => {
     <div>
         <Banner/>
         <WeeklyCats/>
-        <div className="flex flex-row h-auto bg-cat-secondary">
-            <div className="w-1/6 p-10 flex flex-col gap-2 ">
-            <Filter name="Breed"/>
-            <Filter name="Color"/>
-            <Filter name="Liked"/>
+        <div className="flex lg:flex-row sm:flex-col h-auto bg-cat-secondary">
+            <div className="lg:w-1/6 sm:w-full p-10 flex flex-col sm:items-center lg:items-start gap-2 ">
+            <Filter name="Breed" drop="1"/>
+            <Filter name="Color" drop="1"/>
+            <Filter name="Liked" drop="1"/>
             </div>
             <div className="w-full h-auto p-10">
             <span className="text-6xl text-cat-primary font-main">The Cats</span>
