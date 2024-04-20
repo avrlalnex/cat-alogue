@@ -1,4 +1,5 @@
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
+from django.shortcuts import redirect, render
 from .models import Accounts, Cat
 from .serializers import AccountSerializer, CatSerializer
 from rest_framework.decorators import api_view
@@ -6,6 +7,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.parsers import MultiPartParser, FormParser
+from django.http import FileResponse
 
 @api_view(['GET', 'POST'])
 def account_list(request):
@@ -30,17 +32,17 @@ def account_list(request):
                 serializer.save()
                 return Response(serializer.data, status = status.HTTP_201_CREATED)
 
-class PostView(APIView):    
-    parser_classes = (MultiPartParser, FormParser)
+class CatView(APIView):    
 
+    parser_classes = (MultiPartParser, FormParser)
     def get(self, request, *args, **kwargs):
-            images = Cat.objects.all()
-            serializer = CatSerializer(images, many=True)
+           
+            cats = Cat.objects.all()
+            
+            serializer = CatSerializer(cats, many=True)
             return Response(serializer.data)
 
-
-    def post(self, request, *args, **kwargs):
-            
+    def post(self, request):  
             serializer = CatSerializer(data=request.data)
             print(serializer)
             if serializer.is_valid():
@@ -50,10 +52,9 @@ class PostView(APIView):
                 print("not success")
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
-                    
-                    
+          
 @api_view(['GET', 'PUT', 'DELETE'])       
-def account_detail(request, id):
+def account_detail(request):
     try:
         account = Accounts.objects.get(pk = id)
     except Accounts.DoesNotExist:
@@ -75,7 +76,14 @@ def account_detail(request, id):
         account.delete()
         return Response(status = status.HTTP_204_NO_CONTENT)
 
-@api_view(['POST'])
+    elif request.method == 'POST':
+        serializer = AccountSerializer(data = request.data)
+        hello = Accounts.objects.filter(username = request.data['username'])
+        print(hello)
+        return Response("post request")
+
+
+@api_view(['POST', 'PUT'])
 def account_login(request):
     try:
         login_attempt = Accounts.objects.get(username = request.data['username'])
@@ -93,6 +101,17 @@ def account_login(request):
         else:
             return Response("Wrong password")
         
+@api_view(['PUT', 'POST'])
+def account_favorites(request):
+    if(request.method == 'POST'):
+        serializer = AccountSerializer(data = request.data)
+        hello = Accounts.objects.filter(username = request.data['user'])
+        for account in hello:
+            print(account.favoriteCats)
+        return Response("post request")
+    
+    
+    
 
 
     

@@ -50,7 +50,9 @@ const CatsPage = () => {
             <div className="w-full h-auto p-10">
             <span className="text-6xl text-cat-primary font-main">The Cats</span>
             <div className="mt-10 rounded-3xl h-auto p-10 py-14 bg-cat-primary/30 ">
+
                 <CatGallery/>
+
             </div>
             </div>
         </div>
