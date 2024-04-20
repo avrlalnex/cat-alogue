@@ -39,8 +39,8 @@ const CatsPage = () => {
     <div>
         <Banner/>
         <WeeklyCats/>
-        <div className="flex flex-row h-auto bg-cat-secondary">
-            <div className="w-1/6 p-10 flex flex-col gap-2 ">
+        <div className="flex lg:flex-row sm:flex-col h-auto bg-cat-secondary">
+            <div className="lg:w-1/6 sm:w-full p-10 flex flex-col sm:items-center lg:items-start gap-2 ">
             <Filter name="Breed"/>
             <Filter name="Color"/>
             <Filter name="Liked"/>
@@ -48,7 +48,7 @@ const CatsPage = () => {
             <div className="w-full h-auto p-10">
             <span className="text-6xl text-cat-primary font-main">The Cats</span>
             <div className="mt-10 rounded-3xl h-auto p-10 py-14 bg-cat-primary/30 ">
-                <div className="grid grid-cols-4 gap-7 place-items-center justify-items-center pl-5 auto-cols-max">
+                <div className="grid h-auto grid-rows-4 sm:grid-cols-1 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-7 place-items-center justify-items-center pl-5 auto-cols-max">
                 <Catbox featured="0" favorite="false" name="Mocha"/>
                 <Catbox featured="0" favorite="false" name="Mocha"/>
                 <Catbox featured="0" favorite="false" name="Mocha"/>
