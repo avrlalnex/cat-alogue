@@ -7,6 +7,7 @@ import CatIn from './Cats/CatIn.jsx';
 import './index.css'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import CatsPage from './Cats/CatsPage.jsx';
+import CatProfile from './Cats/CatProfile.jsx';
 
 const router = createBrowserRouter(
  [{
@@ -25,6 +26,9 @@ const router = createBrowserRouter(
  },{
   path:"/cat",
   element:<CatsPage/>
+ },{
+  path:"/cat/view",
+  element:<CatProfile/>
  }
 ])
 

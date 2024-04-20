@@ -46,7 +46,7 @@ const Catbox = (props) => {
             </div>
             <h1 className = "text-2xl text-center text-white mt-4 h-2 mb-6">{props.name}</h1>
             
-            <button className = "w-24 h-7 text-xs rounded-2xl bg-cat-secondary text-cat-primary mt-2">Learn More</button>
+            <a href="/cat/view"><button className="w-24 h-7 text-xs rounded-2xl bg-cat-secondary text-cat-primary mt-2">Learn More</button></a>
 
 
             </div>
