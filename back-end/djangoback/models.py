@@ -4,7 +4,8 @@ class Accounts(models.Model):
     username = models.CharField(max_length = 200)
     password = models.CharField(max_length = 200, default='default_value')
     email_address = models.CharField(max_length = 200, default='default_value')
-    catOwner = models.ForeignKey('Owner', null = True, default = None, on_delete = models.CASCADE )
+    catOwner = models.ForeignKey('Owner', null = True, default = None, blank = True, on_delete = models.CASCADE )
+    favoriteCats = models.ManyToManyField('Cat', default = None, null = True, blank = True)
 
 class Cat (models.Model):
     CatName = models.CharField(max_length =200)
@@ -28,6 +29,10 @@ class Owner (models.Model):
     ownerFacebook = models.CharField(max_length = 200)
     ownerAddress = models.CharField(max_length = 200)
     ownerContact = models.CharField(max_length = 200)
+
+class Adopt(models.Model):
+    ownerAccount = models.ForeignKey('Owner', null = True, default = None, on_delete = models.CASCADE)
+    adoptedCat = models.ForeignKey('Cat', null = True, default = None, on_delete = models.CASCADE)
 
 
 
