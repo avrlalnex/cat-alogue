@@ -14,7 +14,7 @@ const Header = () => {
 
         <div className="flex md:order-2 items-center gap-10">
         <a href="/"> Home </a>
-        <a href="/"> Cats </a>
+        <a href="/cat"> Cats </a>
         <a href="/"> About Us</a>
 
         <Link to="/login"><Button color="light" pill className="px-4 h-8 text-cat-primary">Login</Button></Link>
