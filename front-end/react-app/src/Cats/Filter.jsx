@@ -17,15 +17,25 @@ const Filter = (props) => {
     
 
     return ( 
+        <>
+        {parseInt(props.drop)?
+        
         <Dropdown label="" size="md" dismissOnClick={false} renderTrigger={() => title}>
             <Dropdown.Item>Maine Coon</Dropdown.Item>
             <Dropdown.Item>Ragdoll</Dropdown.Item>
             <Dropdown.Item>Persian</Dropdown.Item>
             <Dropdown.Item>Orange</Dropdown.Item>
-        </Dropdown>
+        </Dropdown> :
+        <div className="w-fit cursor-pointer text-lg rounded-full bg-white text-center flex px-5 py-2 text-cat-primary font-main">
+        <div className="text-center w-32">{props.name}</div>
+        </div>
+        }
+
+{/*         
         // <div className="w-full text-lg rounded-full bg-white text-center px-5 py-2 text-cat-primary font-main">
         //     {props.name}
-        // </div>
+        // </div> */}
+        </>
      );
 }
  
