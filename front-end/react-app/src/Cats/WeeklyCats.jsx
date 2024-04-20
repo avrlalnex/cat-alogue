@@ -3,9 +3,14 @@ import CatBox from './CatBox.jsx'
 const WeeklyCats = () => {
     return ( 
         <>
-        <div className="w-full h-50 border bg-cat-primary text-white font-main text-2xl text-center border-black py-10">
+        <div className="w-full h-auto bg-cat-primary text-white font-main flex flex-col text-5xl text-center py-10">
             Cats of the Week
-            <CatBox featured="1"/>
+            <div className="flex justify-center">
+            <CatBox featured="1" name="Luffy" favorite="false"/>
+            <CatBox featured="1" name="Luffy" favorite="false"/>
+            <CatBox featured="1" name="Luffy" favorite="false"/>
+            <CatBox featured="1" name="Luffy" favorite="false"/>
+            </div>
         </div>
         </>
      );

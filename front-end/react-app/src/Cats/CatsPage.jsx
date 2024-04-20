@@ -4,6 +4,9 @@ import Header from '../Header';
 import Footing from '../Footing';
 import Banner from "./Banner";
 import WeeklyCats from "./WeeklyCats";
+import Filter from "./Filter";
+import Catbox from "./CatBox";
+
 
 const CatsPage = () => {
     const [images, setImages] = useState([]);
@@ -34,9 +37,33 @@ const CatsPage = () => {
     <Header/>
     
     <div>
-
         <Banner/>
         <WeeklyCats/>
+        <div className="flex flex-row h-auto bg-cat-secondary">
+            <div className="w-1/6 p-10 flex flex-col gap-2 ">
+            <Filter name="Breed"/>
+            <Filter name="Color"/>
+            <Filter name="Liked"/>
+            </div>
+            <div className="w-full h-auto p-10">
+            <span className="text-6xl text-cat-primary font-main">The Cats</span>
+            <div className="mt-10 rounded-3xl h-auto p-10 py-14 bg-cat-primary/30 ">
+                <div className="grid grid-cols-4 gap-7 place-items-center justify-items-center pl-5 auto-cols-max">
+                <Catbox featured="0" favorite="false" name="Mocha"/>
+                <Catbox featured="0" favorite="false" name="Mocha"/>
+                <Catbox featured="0" favorite="false" name="Mocha"/>
+                <Catbox featured="0" favorite="false" name="Mocha"/>
+                <Catbox featured="0" favorite="false" name="Mocha"/>
+                <Catbox featured="0" favorite="false" name="Mocha"/>
+                <Catbox featured="0" favorite="false" name="Mocha"/>
+                <Catbox featured="0" favorite="false" name="Mocha"/>
+                <Catbox featured="0" favorite="false" name="Mocha"/>
+                <Catbox featured="0" favorite="false" name="Mocha"/>
+                <Catbox featured="0" favorite="false" name="Mocha"/>
+                </div>
+            </div>
+            </div>
+        </div>
     </div>
     
     
