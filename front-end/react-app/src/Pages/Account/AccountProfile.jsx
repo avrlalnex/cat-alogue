@@ -1,16 +1,18 @@
 import Header from "../../Components/Header";
 import Footing from "../../Components/Footing";
 import AccountSidebar from "../../Components/AccountSidebar";
+import React from 'react';
+
 
 const AccountProfile = () => {
     return ( <>
     
         <Header/>
         <div className="bg-cat-secondary h-auto flex flex-row justify-center font-main">
-            <div className="h-auto w-3/4 flex flex-row p-20">
+            <div aria-label="content" className="h-auto w-3/4 flex lg:flex-row sm:flex-col-reverse p-20">
                 <AccountSidebar />
 
-                <div className="w-full h-auto">
+                <div aria-label="details" className="w-full h-auto">
                 <span className="text-5xl text-cat-primary font-main">My Profile</span>
                 <div className="mt-5 rounded-3xl h-auto p-10 py-14 bg-cat-primary/30 ">
                     <div className="bg-cat-primary p-8 mt-2 grid lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-3 gap-3 grid-rows-3 rounded-2xl text-lg w-full h-auto items-center">

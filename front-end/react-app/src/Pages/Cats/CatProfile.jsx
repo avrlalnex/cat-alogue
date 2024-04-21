@@ -1,3 +1,4 @@
+import React from 'react';
 import Header from "../../Components/Header";
 import Footing from "../../Components/Footing";
 import empty_logo from '../../assets/empty_paw.svg';
@@ -6,7 +7,7 @@ import catpic from '../../assets/mocha_sample.jpeg'
 const CatProfile = () => {
     return ( <>
     <Header/>
-    <div className="h-auto py-10 font-main flex lg:flex-row md:flex-col sm:flex-col lg:gap-10 md:gap-3 sm:gap-3 justify-center bg-cat-secondary w-full">
+    <div aria-label="content" className="h-auto py-10 font-main flex lg:flex-row md:flex-col sm:flex-col lg:gap-10 md:gap-3 sm:gap-3 justify-center bg-cat-secondary w-full">
         <div className="p-10 flex flex-col gap-2 lg:w-2/4 md:w-full sm:w-full">
             
             {/* CAT PROFILE */}
@@ -64,7 +65,7 @@ const CatProfile = () => {
         </div>
         <div className="lg:w-1/4 md:w-full bg-cat-secondary lg:p-10 md:px-20 sm:px-20 flex flex-col gap-6">
         <div className = "lg:w-full lg:scale-100 md:scale-75 sm:scale-75 aspect-square overflow-hidden rounded-full lg:mb-5 md:mb-2"> 
-            <img src={catpic} alt="sample cat" className="w-full"/>
+            <img aria-label='cat-pic' src={catpic} alt="sample cat" className="w-full"/>
         </div>
         
         <span className="text-5xl text-cat-primary w-full text-center">Luffy</span>
