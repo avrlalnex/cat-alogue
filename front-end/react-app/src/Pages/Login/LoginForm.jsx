@@ -36,12 +36,12 @@ const LoginForm = () => {
     <div className="flex justify-center items-center min-h-screen pb-12 bg-[#e6842c]">
       <div className="flex flex-col items-center">
         <img src={logo} alt="Catalogue Logo" className='mb-2 w-24 h-24'/> 
-        <div className="text-lg text-white font-lilita mb-4">cat-alogue</div> 
+        <div className="text-lg text-white font-main mb-4">cat-alogue</div> 
 
         <div className="bg-white p-8 border rounded-3xl shadow-lg">
           <form action="" onSubmit = {handleSubmit}>
             <div className="flex justify-center mb-6">
-              <h1 className="text-2xl text-orange-500 font-lilita text-center">
+              <h1 className="text-2xl text-orange-500 font-main text-center">
                 Sign in
               </h1>
             </div>
@@ -64,8 +64,8 @@ const LoginForm = () => {
           </form>
         </div>
         <div className="text-center mt-12">
-          <p className="text-sm font-bold text-white">Don't have an account?</p>
-          <button type='button' className="px-4 py-2 text-orange-500 bg-white border border-orange-500 rounded-full hover:bg-orange-100 font-lilita focus:outline-none focus:ring w-32 mt-2">Sign up</button>
+          <p className="text-sm font-bold font-main text-white">Don't have an account?</p>
+          <button type='button' className="px-4 py-2 text-orange-500 bg-white border border-orange-500 rounded-full hover:bg-orange-100 font-main focus:outline-none focus:ring w-32 mt-2">Sign up</button>
         </div>
       </div>
     </div>
