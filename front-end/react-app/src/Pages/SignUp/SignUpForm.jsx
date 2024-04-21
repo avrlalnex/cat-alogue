@@ -47,24 +47,24 @@ const SignUpForm = () => {
 
             <div className="flex justify-center mb-4">
               <div className="w-84">
-                <input type='text'placeholder='Username' className="w-96 px-4 py-2 border rounded-full border-orange-500 focus:outline-none focus:border-orange-600" name = "username" value = {formData.username} onChange = {handleChange} required/>
+                <input role='input' type='text'placeholder='Username' className="w-96 px-4 py-2 border rounded-full border-orange-500 focus:outline-none focus:border-orange-600" name = "username" value = {formData.username} onChange = {handleChange} required/>
               </div>
             </div>
 
             <div className="flex justify-center mb-4">
               <div className="w-84">
-                <input type='text'placeholder='Email Address' className="w-96 px-4 py-2 border rounded-full border-orange-500 focus:outline-none focus:border-orange-600" name = "email_address" value = {formData.email_address} onChange = {handleChange} required/>
+                <input role='input' type='text'placeholder='Email Address' className="w-96 px-4 py-2 border rounded-full border-orange-500 focus:outline-none focus:border-orange-600" name = "email_address" value = {formData.email_address} onChange = {handleChange} required/>
               </div>
             </div>
 
             <div className="flex justify-center mb-6">
               <div className="w-84">
-                <input type='password' placeholder='Password' className="w-96 px-4 py-2 border rounded-full border-orange-500 focus:outline-none focus:border-orange-600" name = "password" value = {formData.password} onChange = {handleChange} required/>
+                <input role='input' type='password' placeholder='Password' className="w-96 px-4 py-2 border rounded-full border-orange-500 focus:outline-none focus:border-orange-600" name = "password" value = {formData.password} onChange = {handleChange} required/>
               </div>
             </div>
 
             <div className="flex justify-center mb-6">
-              <button type='submit' className="px-4 py-2 text-white bg-orange-500 rounded-full hover:bg-orange-600 font-bold font-lilita focus:outline-none focus:ring w-32">Sign Up</button>
+              <button role='input' type='submit' className="px-4 py-2 text-white bg-orange-500 rounded-full hover:bg-orange-600 font-bold font-lilita focus:outline-none focus:ring w-32">Sign Up</button>
             </div>
           </form>
         </div>
