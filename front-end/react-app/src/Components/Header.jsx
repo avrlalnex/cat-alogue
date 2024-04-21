@@ -1,9 +1,10 @@
 import { Navbar, Button } from "flowbite-react"
 import logo from '../assets/cat_icon.svg'
-import {Link} from "react-router-dom"
+import React from 'react';
 
 
-const Header = () => {
+
+const Header = (props) => {
     // const [isLoggedIn, setLoggedIn] = useState();
 
     // useEffect(()=>{
@@ -13,7 +14,7 @@ const Header = () => {
 
 
     return ( 
-        <><div className="bg-cat-primary py-2 px-6 font-main text-white">
+        <><div aria-label="header" className="bg-cat-primary py-2 px-6 font-main text-white">
         <Navbar fluid className="bg-cat-primary">
         <Navbar.Brand className="m-0" href="/">
         <img src={logo} className="h-6" alt="Cat-alogue Logo" />
@@ -27,7 +28,7 @@ const Header = () => {
         
 
         
-        <Link to="/login"><Button color="light" pill className="px-4 h-8 text-cat-primary">Login</Button></Link>
+        <a href="/login"><button role="button" className="px-8 h-8 text-cat-primary bg-white rounded-full">Login</button></a>
         
 
         <Navbar.Toggle />

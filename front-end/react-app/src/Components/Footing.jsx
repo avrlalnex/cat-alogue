@@ -1,4 +1,4 @@
-
+import React from 'react';
 import logo from '../assets/cat_icon.svg'
 import { Footer } from "flowbite-react";
 import { BsFacebook,  BsInstagram } from "react-icons/bs";
@@ -8,12 +8,12 @@ const Footing = () => {
     return ( 
         <>
 
-      <Footer container className='bg-cat-primary text-white mt-10'>
+      <Footer aria-label='footer' container className='bg-cat-primary text-white mt-10'>
       <div className="w-full bg-cat-primary">
         <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
             <Footer.Brand href="/" >
             <div className='flex flex-row my-4'>
-            <img src={logo} className="h-10" alt="Cat-alogue Logo" />
+            <img aria-label="logo" src={logo} className="h-10" alt="Cat-alogue Logo" />
             <span className="self-center whitespace-nowrap text-2xl text-white ml-3 font-main">Cat-alogue</span>
             </div>
             </Footer.Brand>

@@ -1,4 +1,5 @@
 import { useState, useEffect} from "react";
+import React from 'react';
 import axios from 'axios';
 import Header from "../../Components/Header";
 import Footing from "../../Components/Footing";
@@ -40,7 +41,7 @@ const CatsPage = () => {
     <div>
         <Banner/>
         <WeeklyCats/>
-        <div className="flex lg:flex-row sm:flex-col h-auto bg-cat-secondary border border-black w-full xl:min-w-[1530px] lg:min-w-[1280px] md:min-w-[768px]">
+        <div aria-label="content" className="flex lg:flex-row sm:flex-col h-auto bg-cat-secondary w-full xl:min-w-[1530px] lg:min-w-[1280px] md:min-w-[768px]">
             <div className="lg:w-1/6 sm:w-full p-10 flex flex-col sm:items-center lg:items-start gap-2 ">
             <Filter name="Breed" drop="1"/>
             <Filter name="Color" drop="1"/>
