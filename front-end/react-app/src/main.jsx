@@ -1,16 +1,16 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import Home from './Home/Home.jsx';
-import SignUp from './SignUp/SignUpForm.jsx';
-import Login from './Login/LoginForm.jsx';
-import CatIn from './Cats/CatIn.jsx';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import Home from './Pages/Home/Home.jsx';
+import SignUp from './Pages/SignUp/SignUpForm.jsx';
+import Login from './Pages/Login/LoginForm.jsx';
+import CatIn from './Pages/Cats/CatIn.jsx';
 import './index.css'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import CatsPage from './Cats/CatsPage.jsx';
-import CatProfile from './Cats/CatProfile.jsx';
-import AccountProfile from './Account/AccountProfile.jsx';
-import AccountFave from './Account/AccountFave.jsx';
-import AccountCats from './Account/AccountCats.jsx';
+import CatsPage from './Pages/Cats/CatsPage.jsx';
+import CatProfile from './Pages/Cats/CatProfile.jsx';
+import AccountProfile from './Pages/Account/AccountProfile.jsx';
+import AccountFave from './Pages/Account/AccountFave.jsx';
+import AccountCats from './Pages/Account/AccountCats.jsx';
 
 const router = createBrowserRouter(
  [{

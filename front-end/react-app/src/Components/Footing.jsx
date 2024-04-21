@@ -1,5 +1,5 @@
 
-import logo from './assets/cat_icon.svg'
+import logo from '../assets/cat_icon.svg'
 import { Footer } from "flowbite-react";
 import { BsFacebook,  BsInstagram } from "react-icons/bs";
 

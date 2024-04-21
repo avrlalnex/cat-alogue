@@ -43,7 +43,7 @@ const Catbox = (props) => {
             <img onClick = {handleImageClick} className = "relative size-9 ml-auto" src = {paw} /> 
 
             <div className="w-full px-3">
-            <div className = "w-full aspect-square overflow-hidden rounded-full"> 
+            <div className = "w-full min-w-40 aspect-square overflow-hidden rounded-full"> 
                 <img className = "w-full h-auto" src = {sample_pic}></img>
 
             </div>

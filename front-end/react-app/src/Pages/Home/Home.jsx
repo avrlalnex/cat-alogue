@@ -1,5 +1,5 @@
-import Footing from '../Footing';
-import Header from './../Header'
+import Header from "../../Components/Header";
+import Footing from "../../Components/Footing";
 
 const Home = () => {
     return ( <>

@@ -1,7 +1,7 @@
-import Header from "../Header";
-import Footing from "../Footing";
-import CatGallery from "../Cats/CatGallery";
-import AccountSidebar from "./AccountSidebar";
+import Header from "../../Components/Header";
+import Footing from "../../Components/Footing";
+import CatGallery from "../../Components/CatGallery";
+import AccountSidebar from "../../Components/AccountSidebar";
 import { Link } from "react-router-dom";
 import { Button } from "flowbite-react";
 

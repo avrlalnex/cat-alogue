@@ -1,7 +1,7 @@
-import Header from "../Header";
-import Footing from "../Footing";
-import empty_logo from '../assets/empty_paw.svg';
-import catpic from '../assets/mocha_sample.jpeg'
+import Header from "../../Components/Header";
+import Footing from "../../Components/Footing";
+import empty_logo from '../../assets/empty_paw.svg';
+import catpic from '../../assets/mocha_sample.jpeg'
 
 const CatProfile = () => {
     return ( <>

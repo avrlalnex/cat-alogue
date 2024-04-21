@@ -1,4 +1,4 @@
-import Filter from "../Cats/Filter";
+import Filter from "./Filter";
 
 const AccountSidebar = () => {
     return ( 

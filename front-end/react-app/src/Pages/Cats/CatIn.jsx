@@ -1,5 +1,5 @@
-import Header from "../Header";
-import Footing from "../Footing";
+import Header from "../../Components/Header";
+import Footing from "../../Components/Footing";
 import "./CatIn.css";
 import { useState } from "react";
 import axios from 'axios';

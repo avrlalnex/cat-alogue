@@ -1,8 +1,6 @@
 import { Navbar, Button } from "flowbite-react"
-import logo from './assets/cat_icon.svg'
+import logo from '../assets/cat_icon.svg'
 import {Link} from "react-router-dom"
-import { useEffect, useState } from "react"
-import Filter from "./Cats/Filter"
 
 
 const Header = () => {

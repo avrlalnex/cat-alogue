@@ -1,6 +1,6 @@
-import Header from "../Header";
-import Footing from "../Footing";
-import AccountSidebar from "./AccountSidebar";
+import Header from "../../Components/Header";
+import Footing from "../../Components/Footing";
+import AccountSidebar from "../../Components/AccountSidebar";
 
 const AccountProfile = () => {
     return ( <>
