@@ -26,21 +26,21 @@ const Catbox = (props) => {
     return ( 
         <div>
             {parseInt(props.featured)?
-            <div aria-label='catbox' className = "flex flex-col justify-center items-center h-auto w-64 bg-cat-secondary rounded-3xl m-10 ml-4 p-4">
-            <img onClick = {handleImageClick} className = "relative size-9 ml-auto orange-paw" src = {paw} /> 
+            <div aria-label='catbox' className = "flex flex-col justify-center items-center h-auto w-64 bg-cat-secondary lg:scale-100 sm:scale-125 rounded-3xl m-10 ml-4 p-4">
+            <img onClick = {handleImageClick} className = "relative size-9 ml-auto orange-paw cursor-pointer" src = {paw} /> 
 
             <div className = "relative w-10/12 h-48 overflow-hidden rounded-full"> 
                 <img className = "w-full h-auto" src = {sample_pic} aria-label='cat_pic'></img>
             </div>
             <h1 className = "text-2xl text-center text-cat-primary mt-4 h-2 mb-6">{props.name}</h1>
             
-            <button className = "w-24 h-7 text-xs rounded-2xl bg-cat-primary text-white mt-2">Learn More</button>
+            <button className = "w-24 h-7 text-xs rounded-2xl bg-cat-primary text-white mt-2 hover:bg-cat-secondary hover:text-cat-primary hover:shadow-md hover:border hover:border-cat-primary">Learn More</button>
 
 
             </div>
             :
             <div aria-label='catbox' className = "flex flex-col font-main justify-center items-center h-auto w-auto lg:scale-125 md:scale-100 bg-cat-primary rounded-3xl m-10 ml-4 p-4 pb-5">
-            <img onClick = {handleImageClick} className = "relative size-9 ml-auto" src = {paw} /> 
+            <div className="hover:shadow-lg h-fit w-fit self-end"><img onClick = {handleImageClick} className = "relative white-paw size-9 ml-auto" src = {paw} /> </div>
 
             <div className="w-full px-3">
             <div className = "w-full min-w-40 aspect-square overflow-hidden rounded-full"> 
@@ -50,7 +50,7 @@ const Catbox = (props) => {
             </div>
             <div role="head" className = "text-2xl text-center text-white mt-4 h-2 mb-6">{props.name}</div>
             
-            <a aria-label="view_profile" href='/cat/view'><button className="w-24 h-7 text-xs rounded-2xl bg-cat-secondary text-cat-primary mt-2">Learn More</button></a>
+            <a aria-label="view_profile" href='/cat/view'><button className="w-24 h-7 text-xs rounded-2xl bg-cat-secondary text-cat-primary mt-2  hover:bg-cat-primary hover:text-white hover:shadow-md hover:border hover:border-cat-secondary">Learn More</button></a>
 
 
             </div>
