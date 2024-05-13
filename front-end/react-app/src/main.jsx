@@ -4,6 +4,7 @@ import Home from './Home/Home.jsx';
 import SignUp from './SignUp/SignUpForm.jsx';
 import Login from './Login/LoginForm.jsx';
 import CatIn from './Cats/CatIn.jsx';
+import About from './About/About.jsx';
 import './index.css'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import CatsPage from './Cats/CatsPage.jsx';
