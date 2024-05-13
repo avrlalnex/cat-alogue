@@ -1,5 +1,5 @@
 import React from 'react';
-import Img from './img/block2.png';
+import Img from './assets/block2.png';
 
 function Block() {
   return (
