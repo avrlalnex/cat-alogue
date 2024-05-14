@@ -63,8 +63,10 @@ const CatsPage = () => {
     <div>
         <Banner/>
         <WeeklyCats/>
-        <div className="flex lg:flex-row sm:flex-col h-auto bg-cat-secondary">
-            <div className="lg:w-1/6 sm:w-full p-10 flex flex-col sm:items-center lg:items-start gap-2 ">
+
+        <div aria-label="content" className="flex lg:flex-row sm:flex-col h-auto bg-cat-secondary w-full xl:min-w-[1530px] lg:min-w-[1200px] md:min-w-[768px]">
+            <div className="lg:w-1/6 sm:w-full p-10 xl:px-10 sm:max-xl:px-5 flex flex-col sm:items-center lg:items-start gap-2 ">
+
             <Filter name="Breed" drop="1"/>
             <Filter name="Color" drop="1"/>
             <Filter name="Liked" drop="1"/>

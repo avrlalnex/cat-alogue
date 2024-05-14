@@ -11,7 +11,7 @@ const AccountCats = () => {
     return ( <>
     <Header/>
     <div className="bg-cat-secondary h-auto flex flex-row justify-center font-main">
-        <div aria-label="content" className="h-auto w-3/4 flex lg:flex-row sm:flex-col-reverse p-20">
+        <div aria-label="content" className="h-auto xl:w-5/6 sm:max-lg:2/4 flex lg:flex-row sm:flex-col-reverse p-20">
             <AccountSidebar />
 
             <div aria-label="details" className="w-full h-auto">
