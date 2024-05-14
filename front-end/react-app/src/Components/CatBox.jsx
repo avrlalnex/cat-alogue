@@ -9,6 +9,7 @@ const Catbox = (props) => {
     useEffect( ()=> {
         props.condition ? setPaw(filled_logo) : setPaw(empty_logo)}, [])
 
+    
     const [paw, setPaw] = useState(empty_logo)
 
     const loadPaw = () => {
@@ -45,13 +46,13 @@ const Catbox = (props) => {
             <img onClick = { ()=> {handleImageClick(); props.click()}}  className = "relative size-9 ml-auto" src = {paw} /> 
             <div className="w-full px-3">
             <div className = "w-full min-w-40 aspect-square overflow-hidden rounded-full"> 
-                <img className = "w-full h-auto" src = {sample_pic} aria-label='cat_pic'></img>
+                <img className = "w-full h-auto" src = {props.image} aria-label='cat_pic'></img>
 
             </div>
             </div>
             <div role="head" className = "text-2xl text-center text-white mt-4 h-2 mb-6">{props.name}</div>
             
-            <a aria-label="view_profile" href='/cat/view'><button className="w-24 h-7 text-xs rounded-2xl bg-cat-secondary text-cat-primary mt-2">Learn More</button></a>
+            <a aria-label="view_profile" onClick = {props.detail} href='/cat/view'><button className="w-24 h-7 text-xs rounded-2xl bg-cat-secondary text-cat-primary mt-2">Learn More</button></a>
 
 
             </div>

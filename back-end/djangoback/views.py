@@ -128,7 +128,22 @@ def account_favorites(request):
         return Response("put request")
     
     
-    
+class PostView(APIView):    
+    parser_classes = (MultiPartParser, FormParser)
+
+    def get(self, request, *args, **kwargs):
+            images = Cat.objects.all()
+            serializer = CatSerializer(images, many=True)
+            cats = Cat.objects.all()
+            #images = []
+
+            #for instance in cats:
+            #    if instance.CatImage:
+            #        images.append(instance.CatImage.image)
+
+
+            serializer = CatSerializer(cats, many=True)
+            return Response(serializer.data)
 
 
     

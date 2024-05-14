@@ -51,6 +51,11 @@ const CatsPage = () => {
         console.log(catDetails)
     }
 
+    const handleCat= (id) => {
+        //localStorage.setItem("cat", id)
+        console.log(id);
+    }
+
     
     return ( <>
     <Header/>
@@ -72,7 +77,7 @@ const CatsPage = () => {
         
                 { //access catdetail by catDetail.key    Look at console.log for JSON keys
                 catDetails.map(catDetail => (
-                        <Catbox featured = "0" click = { () => {handleFavorite(catDetail.id)} } favorite = "true" condition = {favorites.includes(catDetail.id)} name = {catDetail.CatName} image = {`http://127.0.0.1:8000/${catDetail.CatImage}`}/>
+                        <Catbox featured = "0" detail = {handleCat(catDetail.id)} click = { () => {handleFavorite(catDetail.id)} } favorite = "true" condition = {favorites.includes(catDetail.id)} name = {catDetail.CatName} image = {`http://127.0.0.1:8000/${catDetail.CatImage}`}/>
                   
                     ))
                 }
