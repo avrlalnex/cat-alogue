@@ -1,10 +1,13 @@
 import empty_logo from '../assets/empty_paw.svg'
 import filled_logo from '../assets/accepted_paw.svg'
-import React, { useState } from 'react'
+import React, { useState , useEffect} from 'react'
 import sample_pic from '../assets/mocha_sample.jpeg'
 import './CatBox.css'
 
 const Catbox = (props) => {
+
+    useEffect( ()=> {
+        props.condition ? setPaw(filled_logo) : setPaw(empty_logo)}, [])
 
     const [paw, setPaw] = useState(empty_logo)
 
@@ -27,8 +30,7 @@ const Catbox = (props) => {
         <div>
             {parseInt(props.featured)?
             <div aria-label='catbox' className = "flex flex-col justify-center items-center h-auto w-64 bg-cat-secondary rounded-3xl m-10 ml-4 p-4">
-            <img onClick = {handleImageClick} className = "relative size-9 ml-auto orange-paw" src = {paw} /> 
-
+            <img onClick = {() => {handleImageClick()}} className = "relative size-9 ml-auto orange-paw" src = {paw} /> 
             <div className = "relative w-10/12 h-48 overflow-hidden rounded-full"> 
                 <img className = "w-full h-auto" src = {sample_pic} aria-label='cat_pic'></img>
             </div>
@@ -40,8 +42,7 @@ const Catbox = (props) => {
             </div>
             :
             <div aria-label='catbox' className = "flex flex-col font-main justify-center items-center h-auto w-auto lg:scale-125 md:scale-100 bg-cat-primary rounded-3xl m-10 ml-4 p-4 pb-5">
-            <img onClick = {handleImageClick} className = "relative size-9 ml-auto" src = {paw} /> 
-
+            <img onClick = { ()=> {handleImageClick(); props.click()}}  className = "relative size-9 ml-auto" src = {paw} /> 
             <div className="w-full px-3">
             <div className = "w-full min-w-40 aspect-square overflow-hidden rounded-full"> 
                 <img className = "w-full h-auto" src = {sample_pic} aria-label='cat_pic'></img>
