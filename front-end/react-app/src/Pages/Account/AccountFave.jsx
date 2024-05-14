@@ -2,6 +2,7 @@ import Header from "../../Components/Header";
 import Footing from "../../Components/Footing";
 import CatGallery from "../../Components/CatGallery";
 import AccountSidebar from "../../Components/AccountSidebar";
+import sample_pic from '../../assets/mocha_sample.jpeg'
 import React from 'react';
 
 
@@ -16,7 +17,7 @@ const AccountFave = () => {
             <div aria-label="details" className="w-full h-auto">
             <span className="text-5xl text-cat-primary font-main">Favorites</span>
             <div className="mt-5 rounded-3xl h-auto p-10 py-14 bg-cat-primary/30 ">
-                <CatGallery profile="1" />
+                <CatGallery profile="1" image={sample_pic} />
             </div>
             </div>
 

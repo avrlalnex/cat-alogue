@@ -27,6 +27,7 @@ const Catbox = (props) => {
 
       };
 
+      console.log(props)
     return ( 
         <div>
             {parseInt(props.featured)?
@@ -45,7 +46,7 @@ const Catbox = (props) => {
             </div>
             :
 
-            <div aria-label='catbox' className = "flex flex-col font-main justify-center items-center h-auto w-auto lg:scale-125 md:scale-100 bg-cat-primary rounded-3xl p-4 mb-4 pb-5">
+            <div aria-label='catbox' className = "flex flex-col font-main justify-center items-center h-auto w-auto xl:scale-110 lg:scale-125 md:scale-100 bg-cat-primary rounded-3xl p-4 mb-10 pb-5">
             <div className="hover:shadow-lg h-fit w-fit self-end"><img onClick = { ()=> {handleImageClick(); props.click()}}  className = "relative size-9 ml-auto" src = {paw} /> </div>
 
             <div className="w-full px-3">
