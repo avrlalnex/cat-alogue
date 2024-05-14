@@ -8,6 +8,7 @@ from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.parsers import MultiPartParser, FormParser
 from django.http import FileResponse
+from django.shortcuts import get_object_or_404  
 
 @api_view(['GET', 'POST'])
 def account_list(request):
@@ -105,13 +106,44 @@ def account_login(request):
 def account_favorites(request):
     if(request.method == 'POST'):
         serializer = AccountSerializer(data = request.data)
+        favoriteCats = []
         hello = Accounts.objects.filter(username = request.data['user'])
         for account in hello:
-            print(account.favoriteCats)
-        return Response("post request")
+            for cat in account.favoriteCats.all():
+                favoriteCats.append(cat.id)
+            print(favoriteCats)
+        return Response(favoriteCats)
+
+
+    elif (request.method == 'PUT'):
+        serializer = AccountSerializer(data = request.data)
+        user = Accounts.objects.filter(username = request.data['user'])
+        for account in user:
+            if (account.favoriteCats.filter(id=request.data['catID']).exists()) == True:
+                favoriteCat = get_object_or_404(account.favoriteCats, id=request.data['catID'])
+                account.favoriteCats.remove(favoriteCat)
+            else:
+                child1 = Cat.objects.get(id = request.data['catID'])
+                account.favoriteCats.add(child1)
+        return Response("put request")
     
     
-    
+class PostView(APIView):    
+    parser_classes = (MultiPartParser, FormParser)
+
+    def get(self, request, *args, **kwargs):
+            images = Cat.objects.all()
+            serializer = CatSerializer(images, many=True)
+            cats = Cat.objects.all()
+            #images = []
+
+            #for instance in cats:
+            #    if instance.CatImage:
+            #        images.append(instance.CatImage.image)
+
+
+            serializer = CatSerializer(cats, many=True)
+            return Response(serializer.data)
 
 
     

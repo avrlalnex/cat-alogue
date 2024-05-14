@@ -4,7 +4,8 @@ import Footing from "../../Components/Footing";
 import empty_logo from '../../assets/empty_paw.svg';
 import catpic from '../../assets/mocha_sample.jpeg'
 
-const CatProfile = () => {
+const CatProfile = (props) => {
+    console.log(localStorage)
     return ( <>
     <Header/>
     <div aria-label="content" className="h-auto py-10 font-main flex lg:flex-row md:flex-col sm:flex-col lg:gap-10 md:gap-3 sm:gap-3 justify-center bg-cat-secondary w-full">
