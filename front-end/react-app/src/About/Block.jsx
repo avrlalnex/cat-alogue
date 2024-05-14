@@ -1,5 +1,5 @@
 import React from 'react';
-import Img from './assets/block2.png';
+import Img from '../assets/block2.png';
 
 function Block() {
   return (
@@ -11,7 +11,7 @@ function Block() {
       
       <div className="w-full md:w-1/2 p-8 flex justify-center items-center">
         <div className="text-center">
-          <h1 className="text-xl font-bold text-main mb-4">Mission Statement</h1>
+          <h1 className="text-xl font-bold font-main mb-4">Mission Statement</h1>
           <p className="mb-8 font-main text-cat-details">
           Cat-alogue is a heartfelt endeavor committed to revolutionizing the way individuals find their furry companions. Our platform stands as a beacon of hope for cats awaiting their forever homes, offering a user-friendly interface that showcases their unique personalities and charms. Through Cat-alogue, we strive to not only facilitate adoptions but also cultivate a community centered around compassion, education, and support for all aspects of cat welfare.
           </p>
