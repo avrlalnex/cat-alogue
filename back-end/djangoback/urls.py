@@ -28,4 +28,5 @@ urlpatterns = [
     path('login/', views.account_login),
     path('cats/', views.CatView.as_view(), name = 'cat_list'),
     path('favorites/', views.account_favorites),
+    path('catprofile/', views.catProfile),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

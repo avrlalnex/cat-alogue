@@ -3,9 +3,37 @@ import Header from "../../Components/Header";
 import Footing from "../../Components/Footing";
 import empty_logo from '../../assets/empty_paw.svg';
 import catpic from '../../assets/mocha_sample.jpeg'
+import axios from 'axios';
+import { useState, useEffect} from "react";
+
 
 const CatProfile = (props) => {
-    console.log(localStorage)
+
+    const [cat, setCat] = useState({CatName: "", CatBirthday: "", CatBreed: "", CatColor: "", CatDescription: "", CatDislikes : "", CatGender: "", CatImage: "", CatLikes: "", CatPersonality: ""})
+
+    const request = { id: localStorage.getItem('cat')};
+    useEffect(() => {
+    const fetchData = async () => {
+        try {
+            // Make the Axios request inside the function
+        
+        const response = await axios.put('http://127.0.0.1:8000/catprofile/', request, {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+
+        // Log the response data
+        console.log(response.data.cat);
+        setCat(response.data.cat)
+      } catch (error) {
+        // Handle errors
+        console.error('Error making PUT request:', error);
+      }
+    };
+    // Call the async function inside useEffect
+    fetchData();
+}, [])
     return ( <>
     <Header/>
     <div aria-label="content" className="h-auto py-10 font-main flex lg:flex-row md:flex-col sm:flex-col lg:gap-10 md:gap-3 sm:gap-3 justify-center bg-cat-secondary w-full">
@@ -23,25 +51,25 @@ const CatProfile = (props) => {
 
             <div className="bg-cat-primary p-8 mt-4 grid lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-3 gap-3 grid-rows-6 rounded-2xl text-lg w-full h-auto items-center">
                 <div className="col-span-1  px-3 text-white text-end">Name</div>
-                <div className="lg:col-span-5 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary text-cat-details text-sm rounded-lg bg-cat-secondary">Mocha Macias</div>
-                <div className="col-span-1 px-3 text-white text-end">Birthdate</div>
-                <div className="lg:col-span-1 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary  text-cat-details text-sm rounded-lg bg-cat-secondary">00/00/00</div>
+                <div className="lg:col-span-5 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary text-cat-details text-sm rounded-lg bg-cat-secondary"> {cat.CatName}</div>
+                <div className="col-span-1 px-3 w-fit text-white text-end">Birthdate</div>
+                <div className="lg:col-span-1 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary  text-cat-details text-sm rounded-lg bg-cat-secondary">{cat.CatBirthday}</div>
                 <div className="col-span-1 px-3 text-white text-end">Age</div>
-                <div className="lg:col-span-1 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary text-cat-details text-sm rounded-lg bg-cat-secondary">8</div>
+                <div className="lg:col-span-1 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary text-cat-details text-sm rounded-lg bg-cat-secondary">{cat.CatAge}</div>
                 <div className="col-span-1 px-3 text-white text-end">Gender</div>
-                <div className="lg:col-span-1 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary text-cat-details text-sm rounded-lg bg-cat-secondary">Male</div>
+                <div className="lg:col-span-1 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary text-cat-details text-sm rounded-lg bg-cat-secondary">{cat.CatGender}</div>
                 <div className="col-span-1 px-3 text-white text-end">Breed</div>
-                <div className="lg:col-span-2 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary text-cat-details text-sm rounded-lg bg-cat-secondary">Orange</div>
+                <div className="lg:col-span-2 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary text-cat-details text-sm rounded-lg bg-cat-secondary">{cat.CatBreed}</div>
                 <div className="col-span-1 px-3 text-white text-end">Color</div>
-                <div className="lg:col-span-2 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary text-cat-details text-sm rounded-lg bg-cat-secondary">Orange</div>
+                <div className="lg:col-span-2 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary text-cat-details text-sm rounded-lg bg-cat-secondary">{cat.CatColor}</div>
                 <div className="col-span-1  px-3 text-white text-end">Address</div>
-                <div className="lg:col-span-5 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary text-cat-details text-sm rounded-lg bg-cat-secondary">Bangkal, Davao City</div>
+                <div className="lg:col-span-5 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary text-cat-details text-sm rounded-lg bg-cat-secondary">address </div>
                 <div className="col-span-1  px-3 text-white text-end">Personality</div>
-                <div className="lg:col-span-5 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary text-cat-details text-sm rounded-lg bg-cat-secondary">Cute, cute, ANG CUTE</div>
+                <div className="lg:col-span-5 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary text-cat-details text-sm rounded-lg bg-cat-secondary">{cat.CatPersonality}</div>
                 <div className="col-span-1  px-3 text-white text-end">Likes</div>
-                <div className="lg:col-span-5 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary text-cat-details text-sm rounded-lg bg-cat-secondary">Aaron</div>
+                <div className="lg:col-span-5 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary text-cat-details text-sm rounded-lg bg-cat-secondary">{cat.CatLikes}</div>
                 <div className="col-span-1  px-3 text-white text-end">Dislikes</div>
-                <div className="lg:col-span-5 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary text-cat-details text-sm rounded-lg bg-cat-secondary">Aaron</div>
+                <div className="lg:col-span-5 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary text-cat-details text-sm rounded-lg bg-cat-secondary">{cat.CatDislikes}</div>
                 
             </div>
 
@@ -66,12 +94,12 @@ const CatProfile = (props) => {
         </div>
         <div className="lg:w-1/4 md:w-full bg-cat-secondary lg:p-10 md:px-20 sm:px-20 flex flex-col gap-6">
         <div className = "lg:w-full lg:scale-100 md:scale-75 sm:scale-75 aspect-square overflow-hidden rounded-full lg:mb-5 md:mb-2"> 
-            <img aria-label='cat-pic' src={catpic} alt="sample cat" className="w-full"/>
+            <img aria-label='cat-pic' src={`http://127.0.0.1:8000/${cat.CatImage}`} alt="sample cat" className="w-full"/>
         </div>
         
-        <span className="text-5xl text-cat-primary w-full text-center">Luffy</span>
+        <span className="text-5xl text-cat-primary w-full text-center">{cat.CatName}</span>
         <div className="w-full font-secondary text-cat-details text-justify font-bold">
-        Laborum aute enim anim ut ea esse minim occaecat Lorem non reprehenderit. Do Lorem do do laboris mollit excepteur anim voluptate nisi cillum Lorem magna minim elit. Irure consectetur ea officia aute ea minim Lorem. Aute magna duis aliqua qui irure occaecat esse duis commodo esse exercitation ex nulla consectetur. Ex proident aliquip nostrud ut ea aute duis proident laborum sint nisi sit dolore aute. Labore nulla quis fugiat officia. Dolore sit nulla nisi adipisicing ea irure et.
+        {cat.CatPersonality}
         </div>
         </div>
     </div>

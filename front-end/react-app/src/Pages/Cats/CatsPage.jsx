@@ -52,8 +52,7 @@ const CatsPage = () => {
     }
 
     const handleCat= (id) => {
-        //localStorage.setItem("cat", id)
-        console.log(id);
+        localStorage.setItem("cat", id)
     }
 
     
@@ -63,10 +62,8 @@ const CatsPage = () => {
     <div>
         <Banner/>
         <WeeklyCats/>
-
-        <div aria-label="content" className="flex lg:flex-row sm:flex-col h-auto bg-cat-secondary w-full xl:min-w-[1530px] lg:min-w-[1200px] md:min-w-[768px]">
-            <div className="lg:w-1/6 sm:w-full p-10 xl:px-10 sm:max-xl:px-5 flex flex-col sm:items-center lg:items-start gap-2 ">
-
+        <div className="flex lg:flex-row sm:flex-col h-auto bg-cat-secondary">
+            <div className="lg:w-1/6 sm:w-full p-10 flex flex-col sm:items-center lg:items-start gap-2 ">
             <Filter name="Breed" drop="1"/>
             <Filter name="Color" drop="1"/>
             <Filter name="Liked" drop="1"/>
@@ -77,12 +74,24 @@ const CatsPage = () => {
                 <div className="grid grid-cols-4 gap-7 place-items-center justify-items-center pl-5 auto-cols-max">
                 
         
-                { //access catdetail by catDetail.key    Look at console.log for JSON keys
-                catDetails.map(catDetail => (
-                        <Catbox featured = "0" detail = {handleCat(catDetail.id)} click = { () => {handleFavorite(catDetail.id)} } favorite = "true" condition = {favorites.includes(catDetail.id)} name = {catDetail.CatName} image = {`http://127.0.0.1:8000/${catDetail.CatImage}`}/>
-                  
-                    ))
-                }
+                { 
+  // Log the catDetail object and its keys
+            catDetails.map(catDetail => {
+                console.log(catDetail.id);
+
+                return (
+                <Catbox 
+                    featured="0"
+                    id = {catDetail.id}
+                    click={() => {handleFavorite(catDetail.id)}}
+                    favorite="true"
+                    condition={favorites.includes(catDetail.id)}
+                    name={catDetail.CatName}
+                    image={`http://127.0.0.1:8000/${catDetail.CatImage}`}
+                />
+                );
+            })
+            }
 
                 </div>
             </div>

@@ -9,10 +9,11 @@ from rest_framework.views import APIView
 from rest_framework.parsers import MultiPartParser, FormParser
 from django.http import FileResponse
 from django.shortcuts import get_object_or_404  
+from rest_framework.decorators import api_view
+import json
 
 @api_view(['GET', 'POST'])
 def account_list(request):
-
     if request.method == 'GET':
         #getting accounts and serializer, return json
         accounts = Accounts.objects.all()
@@ -42,6 +43,13 @@ class CatView(APIView):
             
             serializer = CatSerializer(cats, many=True)
             return Response(serializer.data)
+
+    def put(self, request):
+        print(request.data)
+        #cat = Cat.objects.get(pk = pk)
+        #serializer = CatSerializer(cat)
+        #return Response(serializer.data)
+        return Response("")
 
     def post(self, request):  
             serializer = CatSerializer(data=request.data)
@@ -93,7 +101,7 @@ def account_login(request):
         try:
             login_attempt = Accounts.objects.get(email_address = request.data['username'])
         except Accounts.DoesNotExist:
-            return Response("Acccount was not found")
+            return Response("Account was not found")
     
     if request.method == 'POST':
         serializer = AccountSerializer(login_attempt)
@@ -102,8 +110,12 @@ def account_login(request):
         else:
             return Response("Wrong password")
         
-@api_view(['PUT', 'POST'])
+@api_view(['GET','PUT', 'POST'])
 def account_favorites(request):
+    if(request.data =='GET'):
+        print(request.data)
+        return Response(request.data)
+
     if(request.method == 'POST'):
         serializer = AccountSerializer(data = request.data)
         favoriteCats = []
@@ -127,23 +139,31 @@ def account_favorites(request):
                 account.favoriteCats.add(child1)
         return Response("put request")
     
-    
-class PostView(APIView):    
-    parser_classes = (MultiPartParser, FormParser)
+@api_view(['PUT'])
+def catProfile(request):  
+    if request.method == 'PUT':
+        try:
+            # Parse the JSON data from the request
+            data = request.data
+            print(data)
+            if 'id' not in data:
+                return Response({'error': 'ID is required'}, status=status.HTTP_400_BAD_REQUEST)
 
-    def get(self, request, *args, **kwargs):
-            images = Cat.objects.all()
-            serializer = CatSerializer(images, many=True)
-            cats = Cat.objects.all()
-            #images = []
+            cat_id = data['id']
+            hello = Cat.objects.get(id = cat_id)
+           
+            serializer = CatSerializer(hello, data=data, partial=True)
+            if serializer.is_valid():
+                    serializer.save()
+                    return Response({'cat': serializer.data}, status=status.HTTP_200_OK)
+        
 
-            #for instance in cats:
-            #    if instance.CatImage:
-            #        images.append(instance.CatImage.image)
+            return JsonResponse(serializer.data, status=status.HTTP_200_OK)
+        except json.JSONDecodeError:
+            return Response({'error': 'Invalid JSON'}, status=status.HTTP_400_BAD_REQUEST)
 
-
-            serializer = CatSerializer(cats, many=True)
-            return Response(serializer.data)
+    # This line ensures that a response is always returned
+    return Response({'error': 'Unsupported method'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
 
     
