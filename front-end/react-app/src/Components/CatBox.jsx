@@ -27,6 +27,19 @@ const Catbox = (props) => {
 
       };
 
+      const handleView = () => {
+        localStorage.setItem('cat', props.id)
+        console.log(localStorage.getItem('cat'))
+      }
+
+      const move = () => {setTimeout(() => {
+        window.location.href = '/cat/view'; // Navigate to the new page after the delay
+      }, 0)} // 1000ms = 1 second delay
+        
+      const handleBoth = () => {
+        handleView()
+        move()
+      }
       console.log(props)
     return ( 
         <div>
@@ -58,7 +71,7 @@ const Catbox = (props) => {
             <div role="head" className = "text-2xl text-center text-white mt-4 h-2 mb-6">{props.name}</div>
             
 
-            <a aria-label="view_profile" onClick = {props.detail} href='/cat/view'><button className="w-24 h-7 text-xs rounded-2xl bg-cat-secondary text-cat-primary mt-2  hover:bg-cat-primary hover:text-white hover:shadow-md hover:border hover:border-cat-secondary">Learn More</button></a>
+            <a aria-label="view_profile"  onClick = {handleBoth}  href='/cat/view'><button className="w-24 h-7 text-xs rounded-2xl bg-cat-secondary text-cat-primary mt-2  hover:bg-cat-primary hover:text-white hover:shadow-md hover:border hover:border-cat-secondary">Learn More</button></a>
 
 
 

@@ -12,6 +12,8 @@ const CatProfile = (props) => {
     const [cat, setCat] = useState({CatName: "", CatBirthday: "", CatBreed: "", CatColor: "", CatDescription: "", CatDislikes : "", CatGender: "", CatImage: "", CatLikes: "", CatPersonality: ""})
     const [owner, setOwner] = useState({username: "", email_address:""})
     const request = { id: localStorage.getItem('cat')};
+    
+
     useEffect(() => {
     const fetchData = async () => {
         try {
@@ -42,8 +44,7 @@ const CatProfile = (props) => {
             <div className="flex flex-row items-end justify-between">
             <span className="text-5xl text-cat-primary">Cat Profile</span>
             <div className="flex flex-row gap-2">
-            <span className="text-3xl text-end text-[#A25411]">Add to Favorites</span>
-            <img className = "relative size-9 ml-auto orange-paw" src = {empty_logo} /> 
+
             </div>
             </div>
 
@@ -51,8 +52,8 @@ const CatProfile = (props) => {
             <div className="bg-cat-primary p-8 mt-4 grid lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-3 gap-3 grid-rows-6 rounded-2xl text-lg w-full h-auto items-center">
                 <div className="col-span-1  px-3 text-white text-end">Name</div>
                 <div className="lg:col-span-5 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary text-cat-details text-sm rounded-lg bg-cat-secondary"> {cat.CatName}</div>
-                <div className="col-span-1 px-3 w-fit text-white text-end">Birthdate</div>
-                <div className="lg:col-span-1 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary  text-cat-details text-sm rounded-lg bg-cat-secondary">{cat.CatBirthday}</div>
+                <div className="col-span-1 px-3  text-white text-end">Birthdate</div>
+                <div className="lg:col-span-1 w-fit md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary  text-cat-details text-sm rounded-lg bg-cat-secondary">{cat.CatBirthday}</div>
                 <div className="col-span-1 px-3 text-white text-end">Age</div>
                 <div className="lg:col-span-1 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary text-cat-details text-sm rounded-lg bg-cat-secondary">{cat.CatAge}</div>
                 <div className="col-span-1 px-3 text-white text-end">Gender</div>
