@@ -53,7 +53,7 @@ const CatProfile = (props) => {
                 <div className="col-span-1  px-3 text-white text-end">Name</div>
                 <div className="lg:col-span-5 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary text-cat-details text-sm rounded-lg bg-cat-secondary"> {cat.CatName}</div>
                 <div className="col-span-1 px-3  text-white text-end">Birthdate</div>
-                <div className="lg:col-span-1 w-fit md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary  text-cat-details text-sm rounded-lg bg-cat-secondary">{cat.CatBirthday}</div>
+                <div className="lg:col-span-1 w-full border md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary  text-cat-details text-sm rounded-lg bg-cat-secondary">{cat.CatBirthday}</div>
                 <div className="col-span-1 px-3 text-white text-end">Age</div>
                 <div className="lg:col-span-1 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary text-cat-details text-sm rounded-lg bg-cat-secondary">{cat.CatAge}</div>
                 <div className="col-span-1 px-3 text-white text-end">Gender</div>

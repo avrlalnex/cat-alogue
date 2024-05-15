@@ -46,7 +46,7 @@ function HomeCard() {
         <p className="text-lg font-main font-normal text-center text-cat-details ml-[-20px]">
             Got a furry friend in need of a forever home? Whether you're looking <br/> to adopt or rehome a cat, we're here to help you every step of the way. <br/>Let's connect and make a purr-fect match!</p>
       <div className="flex justify-center mt-6 ml-[-20px]">
-        <button className="px-4 py-2 text-white bg-cat-primary rounded-xl font-main w-32 mr-4 hover:scale-105 transition duration-300"> Get Started </button>
+        <a href='/login'><button className="px-4 py-2 text-white bg-cat-primary rounded-xl font-main w-32 mr-4 hover:scale-105 transition duration-300"> Get Started </button></a>
 
       </div>
       </div>

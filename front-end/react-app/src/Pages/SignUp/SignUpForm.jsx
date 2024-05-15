@@ -25,7 +25,7 @@ const SignUpForm = () => {
 
     //makes post request to api
     axios.post('http://127.0.0.1:8000/accounts/', formData)
-    .then(response => {console.log("success", response.data)})
+    .then(response => {console.log("success", response.data); window.location.href = '/login'})
     .catch(error => {console.log(error)})
   }
   
@@ -40,37 +40,49 @@ const SignUpForm = () => {
         <div className="bg-white p-8 border rounded-3xl shadow-lg">
           <form action="" onSubmit = {handleSubmit}>
             <div className="flex justify-center mb-6">
-              <h1 className="text-2xl text-orange-500 font-bold font-lilita text-center">
+              <h1 className="text-2xl text-cat-primary font-bold font-lilita text-center">
                 Sign Up
               </h1>
             </div>
 
             <div className="flex justify-center mb-4">
               <div className="w-84">
-                <input role='input' type='text'placeholder='Username' className="w-96 px-4 py-2 border rounded-full border-orange-500 focus:outline-none focus:border-orange-600" name = "username" value = {formData.username} onChange = {handleChange} required/>
+                <input role='input' type='text'placeholder='Username' className="w-96 px-4 py-2 border rounded-full border-cat-primary focus:outline-none focus:border-orange-600" name = "username" value = {formData.username} onChange = {handleChange} required/>
               </div>
             </div>
 
             <div className="flex justify-center mb-4">
               <div className="w-84">
-                <input role='input' type='text'placeholder='Email Address' className="w-96 px-4 py-2 border rounded-full border-orange-500 focus:outline-none focus:border-orange-600" name = "email_address" value = {formData.email_address} onChange = {handleChange} required/>
+                <input role='input' type='text'placeholder='Email Address' className="w-96 px-4 py-2 border rounded-full border-cat-primary focus:outline-none focus:border-orange-600" name = "email_address" value = {formData.email_address} onChange = {handleChange} required/>
+              </div>
+            </div>
+
+            <div className="flex justify-center mb-4">
+              <div className="w-84">
+                <input role='input' type='text'placeholder='Facebook Link' className="w-96 px-4 py-2 border rounded-full border-cat-primary focus:outline-none focus:border-orange-600" name = "email_address" value = {formData.email_address} onChange = {handleChange} required/>
+              </div>
+            </div>
+
+            <div className="flex justify-center mb-4">
+              <div className="w-84">
+                <input role='input' type='text'placeholder='Home Address' className="w-96 px-4 py-2 border rounded-full border-cat-primary focus:outline-none focus:border-orange-600" name = "email_address" value = {formData.email_address} onChange = {handleChange} required/>
               </div>
             </div>
 
             <div className="flex justify-center mb-6">
               <div className="w-84">
-                <input role='input' type='password' placeholder='Password' className="w-96 px-4 py-2 border rounded-full border-orange-500 focus:outline-none focus:border-orange-600" name = "password" value = {formData.password} onChange = {handleChange} required/>
+                <input role='input' type='password' placeholder='Password' className="w-96 px-4 py-2 border rounded-full border-cat-primary focus:outline-none focus:border-orange-600" name = "password" value = {formData.password} onChange = {handleChange} required/>
               </div>
             </div>
 
             <div className="flex justify-center mb-6">
-              <button role='input' type='submit' className="px-4 py-2 text-white bg-orange-500 rounded-full hover:bg-orange-600 font-bold font-lilita focus:outline-none focus:ring w-32">Sign Up</button>
+              <button role='input' type='submit' className="px-4 py-2 text-white bg-cat-primary rounded-full hover:bg-orange-600 font-bold font-lilita focus:outline-none focus:ring w-32">Sign Up</button>
             </div>
           </form>
         </div>
         <div className="text-center mt-12">
           <p className="text-sm font-bold text-white"> Already have an account?</p>
-          <button type='button' className="px-4 py-2 text-orange-500 bg-white border border-orange-500 rounded-full hover:bg-orange-100 font-bold font-lilita focus:outline-none focus:ring w-32 mt-2">Sign in</button>
+          <a href='login'><button type='button' className="px-4 py-2 text-cat-primary bg-white border border-cat-primary rounded-full hover:bg-orange-100 font-bold font-lilita focus:outline-none focus:ring w-32 mt-2">Sign in</button></a>
         </div>
       </div>
     </div>

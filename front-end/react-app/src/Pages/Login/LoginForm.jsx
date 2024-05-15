@@ -54,24 +54,24 @@ const LoginForm = () => {
 
             <div className="flex justify-center mb-4">
               <div className="w-84">
-                <input role='input' type='text' placeholder='Username' className="w-96 px-4 py-2 border rounded-full border-orange-500 focus:outline-none focus:border-orange-600" name = "username" value = {formData.username} onChange = {handleChange} required/>
+                <input role='input' type='text' placeholder='Username' className="w-96 px-4 py-2 border rounded-full border-cat-primary focus:outline-none focus:border-orange-600" name = "username" value = {formData.username} onChange = {handleChange} required/>
               </div>
             </div>
 
             <div className="flex justify-center mb-6">
               <div className="w-84">
-                <input role='input' type='password' placeholder='Password' className="w-96 px-4 py-2 border rounded-full border-orange-500 focus:outline-none focus:border-orange-600" name = "password" value = {formData.password} onChange = {handleChange} required/>
+                <input role='input' type='password' placeholder='Password' className="w-96 px-4 py-2 border rounded-full border-cat-primary focus:outline-none focus:border-orange-600" name = "password" value = {formData.password} onChange = {handleChange} required/>
               </div>
             </div>
 
             <div className="flex justify-center mb-6">
-              <button role='input' type='submit' className="px-4 py-2 text-white bg-orange-500 rounded-full hover:bg-orange-600 font-lilita focus:outline-none focus:ring w-32">Login</button>
+              <button role='input' type='submit' className="px-4 py-2 text-white bg-cat-primary rounded-full hover:bg-cat-primary font-lilita focus:outline-none focus:ring w-32">Login</button>
             </div>
           </form>
         </div>
         <div className="text-center mt-12">
           <p className="text-sm font-bold font-main text-white">Don't have an account?</p>
-          <button type='button' className="px-4 py-2 text-orange-500 bg-white border border-orange-500 rounded-full hover:bg-orange-100 font-main focus:outline-none focus:ring w-32 mt-2">Sign up</button>
+          <a href='/signup'><button type='button' className="px-4 py-2 text-cat-primary bg-white border border-cat-primary rounded-full hover:bg-orange-100 font-main focus:outline-none focus:ring w-32 mt-2">Sign up</button></a>
         </div>
       </div>
     </div>

@@ -15,10 +15,10 @@ const HomeLandingContainer = () => {
     <div>
       <div className="flex justify-between">
         {/* Left container */}
-        <div className="w-1/2 p-8 flex gap-4 flex-col justify-center">
+        <div className="w-1/2 ml-8 p-8 flex gap-4 flex-col justify-center">
           <h1 className="text-6xl mb-0 mt-24 text-white font-main text-left">Adopt, Don't Shop! </h1>
           <p className="text-2xl font-main text-white text-left font-normal">Your purrfect companion.</p>
-          <button type='button' className="text-2xl px-9 py-3 text-cat-primary bg-white border border-cat-primary rounded-full hover:bg-orange-100 font-main focus:outline-none focus:ring w-fit mt-2 self-left">Adopt Now</button>
+          <a href='/login'><button type='button' className="text-2xl px-9 py-3 text-cat-primary bg-white border border-cat-primary rounded-full hover:bg-orange-100 font-main focus:outline-none focus:ring w-fit mt-2 self-left">Adopt Now</button></a>
         </div>
 
         {/* Right container */}

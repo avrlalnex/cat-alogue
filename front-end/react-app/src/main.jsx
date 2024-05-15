@@ -11,6 +11,7 @@ import CatProfile from './Pages/Cats/CatProfile.jsx';
 import AccountProfile from './Pages/Account/AccountProfile.jsx';
 import AccountFave from './Pages/Account/AccountFave.jsx';
 import AccountCats from './Pages/Account/AccountCats.jsx';
+import Logout from './Pages/Login/Logout.jsx';
 
 const router = createBrowserRouter(
  [{
@@ -19,6 +20,9 @@ const router = createBrowserRouter(
  },{
   path:"/login",
   element: <Login/>
+ },{
+  path:"/logout",
+  element:<Logout/>
  },
  {
   path:"/signup",
