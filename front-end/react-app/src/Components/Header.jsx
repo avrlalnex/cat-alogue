@@ -28,7 +28,7 @@ const Header = (props) => {
         {isLoggedIn?<>
             <a href="/cat"> Cats </a>
             <a href="/profile/view"> Profile</a> 
-            <a href="/"><button role="button" className="px-8 h-8 text-cat-primary bg-white rounded-full">Logout</button></a>
+            <a href="/"><button onClick = {() =>{localStorage.clear()} }role="button" className="px-8 h-8 text-cat-primary bg-white rounded-full">Logout</button></a>
         </>:
         <a href="/login"><button role="button" className="px-8 h-8 text-cat-primary bg-white rounded-full">Login</button></a>}
         {/* temporary */}        

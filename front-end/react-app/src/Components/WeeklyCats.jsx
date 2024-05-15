@@ -10,7 +10,8 @@ const WeeklyCats = (props) => {
             <div className="h-4/12 w-8/12  flex mt-3 lg:flex-row sm:flex-col lg:gap-1 xl:gap-3 sm:gap-6 items-center justify-center">
             {props.catDetails.slice(0, 4).map((catDetail, index) => (
                 <CatBox  featured="1"
-                id = {catDetail.id}
+                favoritePage = {false}
+                id = {catDetail.id} 
                 click={() => {handleFavorite(catDetail.id)}}
                 favorite="true"
                 name={catDetail.CatName}

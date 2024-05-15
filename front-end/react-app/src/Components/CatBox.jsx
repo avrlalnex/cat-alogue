@@ -67,13 +67,12 @@ const Catbox = (props) => {
             {parseInt(props.featured)?
 
             <div aria-label='catbox' className = "flex flex-col justify-center items-center h-auto w-64 bg-cat-secondary lg:scale-100 sm:scale-125 rounded-3xl m-10 ml-4 p-4">
-             <img onClick = {() => {handleImageClick()}} className = "relative size-9 ml-auto orange-paw cursor-pointer" src = {paw} /> 
             <div className = "relative w-10/12 h-48 overflow-hidden rounded-full"> 
-                <img className = "w-full h-auto" src = {sample_pic} aria-label='cat_pic'></img>
+                <img className = "w-full h-auto" src = {props.image} aria-label='cat_pic'></img>
             </div>
             <h1 className = "text-2xl text-center text-cat-primary mt-4 h-2 mb-6">{props.name}</h1>
             
-            <button className = "w-24 h-7 text-xs rounded-2xl bg-cat-primary text-white mt-2 hover:bg-cat-secondary hover:text-cat-primary hover:shadow-md hover:border hover:border-cat-primary">Learn More</button>
+            <a aria-label="view_profile" onClick = {handleBoth}  href='/cat/view'><button className="w-24 h-7 text-xs rounded-2xl bg-cat-primary text-white mt-2  hover:text-cat-primary hover:bg-cat-secondary hover:shadow-md hover:border hover:border-cat-primary">Learn More</button></a>
 
 
             </div>

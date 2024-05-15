@@ -137,6 +137,7 @@ def account_favorites(request):
             else:
                 child1 = Cat.objects.get(id = request.data['catID'])
                 account.favoriteCats.add(child1)
+            account.save()
         return Response("put request")
 
 

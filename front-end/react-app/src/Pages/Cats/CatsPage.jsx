@@ -76,8 +76,7 @@ const CatsPage = () => {
 
     const handleFavorite = (id) => {
         const request = {user: localStorage.getItem("username"), catID: id}
-        const userFavorites = axios.put('http://127.0.0.1:8000/favorites/', request)
-        console.log(catDetails)
+        axios.put('http://127.0.0.1:8000/favorites/', request).then((res) => {console.log(res.data)})
     }
 
     const handleCat= (id) => {
@@ -90,7 +89,7 @@ const CatsPage = () => {
     
     <div>
         <Banner/>
-        <WeeklyCats adoption = {false} catDetails = {catDetails}/>
+        <WeeklyCats adoption = {false} catDetails = {allCats}/>
         <div className="flex lg:flex-row sm:flex-col h-auto bg-cat-secondary">
             <div className="lg:w-1/6 sm:w-full p-10 flex flex-col sm:items-center lg:items-start gap-2 ">
             
