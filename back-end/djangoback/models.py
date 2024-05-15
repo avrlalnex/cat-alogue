@@ -6,6 +6,9 @@ class Accounts(models.Model):
     email_address = models.CharField(max_length = 200, default='default_value')
     catOwner = models.ForeignKey('Owner', null = True, default = None, blank = True, on_delete = models.CASCADE )
     favoriteCats = models.ManyToManyField('Cat', default = None, null = True, blank = True)
+    facebookAccount = models.CharField(max_length = 500, default = "facebook.com")
+    address = models.CharField(max_length = 500, default = "nothing")
+    age = models.CharField(max_length = 200, default = "nothing")
 
 class Cat (models.Model):
     CatName = models.CharField(max_length =200)
