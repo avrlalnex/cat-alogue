@@ -24,8 +24,6 @@ const AccountCats = () => {
         axios.put('http://127.0.0.1:8000/catfilter/', {filter: filter}).then((response) => {
             setAccountCats(response.data)
         })
-
-
   })
 
     useEffect(() => {

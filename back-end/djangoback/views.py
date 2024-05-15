@@ -140,7 +140,7 @@ def account_favorites(request):
         return Response("put request")
 
 
-@api_view(['PUT'])
+@api_view(['PUT', 'POST'])
 def catFilter(request):
     if request.method == 'PUT':
         if(request.data['filter'] == 'adopted'):
@@ -150,6 +150,13 @@ def catFilter(request):
         serializer = CatSerializer(cats, many = True)
         print(serializer.data)
         return Response(serializer.data)
+
+    if request.method == 'POST':
+        hello = request.data['postForm']['user']
+        account = Accounts.objects.get(username = hello)
+        serializer = AccountSerializer(account)
+        print(serializer.data['favoriteCats'])
+        return Response(serializer.data['favoriteCats'])
 
 @api_view(['GET','PUT', 'POST'])
 def catProfile(request):  
