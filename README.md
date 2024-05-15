@@ -13,7 +13,7 @@ Cat-alogue is a web application that serves as a platform for aspiring pet-owner
 ## Features 
 
 - **Display For-Adoption Cats:**
-    Cat-alogue allows cat-owners to put up their cats for adoptions will all of their details. 
+    Cat-alogue allows cat-owners to put up their cats for adoptions with all of their details. 
 
 - **Browse Cats:**
     Cat-alogue guests can browse through the catalogue of cats that are put up by the owners. The individual cat pages have their own description of the feline containing its _breed_, _date of birth_, _contact number_, and more. 
