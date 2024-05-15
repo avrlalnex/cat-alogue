@@ -39,7 +39,7 @@ class CatView(APIView):
     parser_classes = (MultiPartParser, FormParser)
     def get(self, request, *args, **kwargs):
            
-            cats = Cat.objects.all()
+            cats = Cat.objects.filter(CatAdoption = False)
             
             serializer = CatSerializer(cats, many=True)
             return Response(serializer.data)

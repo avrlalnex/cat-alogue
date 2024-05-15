@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 import { Button } from "flowbite-react";
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import { Dropdown } from "flowbite-react";
+
+
 
 
 const AccountCats = () => {
@@ -46,7 +49,7 @@ const AccountCats = () => {
 
             <div aria-label="details" className="w-full h-auto">
             <div className="flex flex-row items-end justify-between gap-8">
-            <span className="text-5xl text-cat-primary">My Cats</span>
+            <span className="text-5xl text-cat-primary">My Cats</span> 
             <a href="/cat/add"><button className="bg-cat-primary shadow-md px-10 py-2 text-lg w-auto text-white rounded-full font-main">Add Cat</button></a>
             </div>
             <div className="mt-5 rounded-3xl h-auto p-10 py-14 bg-cat-primary/30 ">
