@@ -16,34 +16,6 @@ const WeeklyCats = (props) => {
                 name={catDetail.CatName}
                 image={`http://127.0.0.1:8000/${catDetail.CatImage}`}/>
             ))}
-
-                {/* sample featured */}
-
-                <CatBox  featured="1"
-                id = '123'
-                click={() => {handleFavorite(catDetail.id)}}
-                favorite="true"
-                name='sample'
-                image={sample_pic}/>
-
-                <CatBox  featured="1"
-                id = '123'
-                click={() => {handleFavorite(catDetail.id)}}
-                favorite="true"
-                name='sample'
-                image={sample_pic}/>
-                <CatBox  featured="1"
-                id = '123'
-                click={() => {handleFavorite(catDetail.id)}}
-                favorite="true"
-                name='sample'
-                image={sample_pic}/>
-                <CatBox  featured="1"
-                id = '123'
-                click={() => {handleFavorite(catDetail.id)}}
-                favorite="true"
-                name='sample'
-                image={sample_pic}/>
             </div>
         </div>
         </>
