@@ -52,7 +52,16 @@ Libraries Used:
 
 ## Cat-alogue (Screenshots)
  <img src="front-end/react-app/src/assets/login.gif" alt="Login"> <br/>
-  <img src="front-end/react-app/src/assets/homesection.gif" alt="Home">
+ <img src="front-end/react-app/src/assets/homesection.gif" alt="Home">
+
+ <img src = "https://media.discordapp.net/attachments/1203380825928896563/1240331225298767943/Screenshot_2024-05-15_at_11.52.19_PM.png?ex=66462bf8&is=6644da78&hm=8df067534c28ed50b8d8ae5c37ffc6c9c091be6dbe4cf605d0886a6504575a6a&=&format=webp&quality=lossless&width=1544&height=798">
+
+ <img src = "https://cdn.discordapp.com/attachments/1203380825928896563/1240331225898422303/Screenshot_2024-05-15_at_11.51.23_PM.png?ex=66462bf8&is=6644da78&hm=9dd829375b8f7fb55b7a7707579445aea406524252f7bfd88a4e320b1c54b1c3&">
+
+ <img src = "https://cdn.discordapp.com/attachments/1203380825928896563/1240331226439749663/Screenshot_2024-05-15_at_11.51.42_PM.png?ex=66462bf8&is=6644da78&hm=dae115d832060e7ae01b3e164bd696f7ef1a90a7c962f1838cdbda47da4e6238&">
+
+ <img src = "https://cdn.discordapp.com/attachments/1203380825928896563/1240331227010043977/Screenshot_2024-05-15_at_11.51.52_PM.png?ex=66462bf8&is=6644da78&hm=55709c3bd3e4b9d607cac960613ce41c6cc373e363d72819de6726fc620bf0e2&">
+ 
 
 ## Contributors
 
