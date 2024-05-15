@@ -40,7 +40,6 @@ const Catbox = (props) => {
         handleView()
         move()
       }
-      console.log(props)
     return ( 
         <div>
             {parseInt(props.featured)?

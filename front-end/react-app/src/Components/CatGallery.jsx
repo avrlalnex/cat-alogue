@@ -12,7 +12,6 @@ const CatGallery = (props) => {
         <div aria-label="gallery" className="grid h-fit sm:grid-cols-1 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 gap-8 place-items-center justify-items-center auto-cols-max">
         { 
             props.accountCats.map(catDetail => {
-                console.log(catDetail.id);
                 return (
                 <Catbox 
                     featured="0"
