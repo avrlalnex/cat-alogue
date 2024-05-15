@@ -121,9 +121,9 @@ const CatsPage = () => {
                 <Catbox 
                     featured="0"
                     id = {catDetail.id}
+                    condition={favorites.includes(catDetail.id)}
                     click={() => {handleFavorite(catDetail.id)}}
                     favorite="true"
-                    condition={favorites.includes(catDetail.id)}
                     name={catDetail.CatName}
                     image={`http://127.0.0.1:8000/${catDetail.CatImage}`}
                 />

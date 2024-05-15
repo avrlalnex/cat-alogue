@@ -8,7 +8,7 @@ import axios from 'axios';
 
 const Catbox = (props) => {
 
-    useEffect( ()=> {props.condition ? setPaw(filled_logo) : setPaw(empty_logo)}, [])
+    useEffect( ()=> {props.condition ? setPaw(filled_logo) : setPaw(empty_logo)}, [props.condition])
 
 
     const handleAdoption = (event) => {
