@@ -43,6 +43,12 @@ Cat-alogue is a web application that serves as a platform for aspiring pet-owner
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" alt="Django" width="40" height="40" />
 </p>
 
+Libraries Used:
+Axios
+Django Rest Framework
+React Flowbite
+
+
 ## Cat-alogue (Screenshots)
  <img src="front-end/react-app/src/assets/login.gif" alt="Login"> <br/>
   <img src="front-end/react-app/src/assets/homesection.gif" alt="Home">
