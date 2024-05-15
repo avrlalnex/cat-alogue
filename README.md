@@ -44,9 +44,10 @@ Cat-alogue is a web application that serves as a platform for aspiring pet-owner
 </p>
 
 Libraries Used:
-Axios
-Django Rest Framework
-React Flowbite
+- Axios
+- Django Rest Framework
+- React Flowbite
+- React Router
 
 
 ## Cat-alogue (Screenshots)
