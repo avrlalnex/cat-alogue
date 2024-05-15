@@ -15,6 +15,18 @@ const AccountCats = () => {
 
     const request = {account: localStorage.getItem("username")}
     const [accountCats, setAccountCats] = useState([{}])
+    const [filter, setFilter] = useState('non-adopted');
+
+  const handleFilterChange = (event) => {
+    setFilter(event.target.value);
+  };
+  const handleFilter = (() => {
+        axios.put('http://127.0.0.1:8000/catfilter/', {filter: filter}).then((response) => {
+            setAccountCats(response.data)
+        })
+
+
+  })
 
     useEffect(() => {
         console.log("hello")
@@ -50,6 +62,24 @@ const AccountCats = () => {
             <div aria-label="details" className="w-full h-auto">
             <div className="flex flex-row items-end justify-between gap-8">
             <span className="text-5xl text-cat-primary">My Cats</span> 
+            <div>
+
+        <div className = "flex gap-2">
+        <select className = "w-fit cursor-pointer text-lg rounded-full border-0 bg-white text-center flex px-5 py-2 text-cat-primary font-main" id="cat-filter" value={filter} onChange={handleFilterChange}>
+            <option value="adopted">Adopted</option>
+            <option value="non-adopted">Non-Adopted</option>
+        </select>
+        <button onClick = {handleFilter}className = "bg-white p-2 rounded-md w-7/12"> Filter</button>
+        </div>
+
+      <div>
+        {filter === 'adopted' ? (
+          <p></p>
+        ) : (
+          <p></p>
+        )}
+      </div>
+    </div>
             <a href="/cat/add"><button className="bg-cat-primary shadow-md px-10 py-2 text-lg w-auto text-white rounded-full font-main">Add Cat</button></a>
             </div>
             <div className="mt-5 rounded-3xl h-auto p-10 py-14 bg-cat-primary/30 ">

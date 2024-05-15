@@ -138,7 +138,19 @@ def account_favorites(request):
                 child1 = Cat.objects.get(id = request.data['catID'])
                 account.favoriteCats.add(child1)
         return Response("put request")
-    
+
+
+@api_view(['PUT'])
+def catFilter(request):
+    if request.method == 'PUT':
+        if(request.data['filter'] == 'adopted'):
+            cats = Cat.objects.filter(CatAdoption = True)
+        elif(request.data['filter']) == 'non-adopted':
+            cats = Cat.objects.filter(CatAdoption = False)
+        serializer = CatSerializer(cats, many = True)
+        print(serializer.data)
+        return Response(serializer.data)
+
 @api_view(['GET','PUT', 'POST'])
 def catProfile(request):  
     if request.method == 'GET':

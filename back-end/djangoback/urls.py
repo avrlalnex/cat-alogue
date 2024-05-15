@@ -29,4 +29,5 @@ urlpatterns = [
     path('cats/', views.CatView.as_view(), name = 'cat_list'),
     path('favorites/', views.account_favorites),
     path('catprofile/', views.catProfile),
+    path('catfilter/', views.catFilter)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
