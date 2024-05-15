@@ -71,7 +71,7 @@ const LoginForm = () => {
         </div>
         <div className="text-center mt-12">
           <p className="text-sm font-bold font-main text-white">Don't have an account?</p>
-          <a href="/signup"><button type='button' className="px-4 py-2 text-cat-primary bg-white border border-cat-primary rounded-full hover:bg-cat-primary font-main focus:outline-none focus:ring w-32 mt-2">Sign up</button></a>
+          <a href="/signup"><button type='button' className="px-4 py-2 text-cat-primary bg-white border border-cat-primary rounded-full font-main focus:outline-none focus:ring w-32 mt-2">Sign up</button></a>
         </div>
       </div>
     </div>

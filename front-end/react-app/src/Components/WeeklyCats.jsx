@@ -1,21 +1,49 @@
 import React from 'react';
 import CatBox from './CatBox.jsx'
+import sample_pic from '../assets/mocha_sample.jpeg'
 
 const WeeklyCats = (props) => {
     return ( 
         <>
-        <div aria-label='weekly-cats' className=" bg-cat-primary text-white font-main flex flex-col text-5xl text-center py-10">
+        <div aria-label='weekly-cats' className=" bg-cat-primary text-white font-main flex flex-col text-5xl items-center text-center py-8">
             Cats of the Week
-            <div className="h-4/12 w-6/12 border flex mt-10 lg:flex-row sm:flex-col lg:gap-1 sm:gap-6 items-center justify-center">
+            <div className="h-4/12 w-8/12  flex mt-3 lg:flex-row sm:flex-col lg:gap-1 xl:gap-3 sm:gap-6 items-center justify-center">
             {props.catDetails.slice(0, 4).map((catDetail, index) => (
-                <CatBox  featured="0"
+                <CatBox  featured="1"
                 id = {catDetail.id}
                 click={() => {handleFavorite(catDetail.id)}}
                 favorite="true"
                 name={catDetail.CatName}
                 image={`http://127.0.0.1:8000/${catDetail.CatImage}`}/>
             ))}
-            
+
+                {/* sample featured */}
+
+                <CatBox  featured="1"
+                id = '123'
+                click={() => {handleFavorite(catDetail.id)}}
+                favorite="true"
+                name='sample'
+                image={sample_pic}/>
+
+                <CatBox  featured="1"
+                id = '123'
+                click={() => {handleFavorite(catDetail.id)}}
+                favorite="true"
+                name='sample'
+                image={sample_pic}/>
+                <CatBox  featured="1"
+                id = '123'
+                click={() => {handleFavorite(catDetail.id)}}
+                favorite="true"
+                name='sample'
+                image={sample_pic}/>
+                <CatBox  featured="1"
+                id = '123'
+                click={() => {handleFavorite(catDetail.id)}}
+                favorite="true"
+                name='sample'
+                image={sample_pic}/>
             </div>
         </div>
         </>

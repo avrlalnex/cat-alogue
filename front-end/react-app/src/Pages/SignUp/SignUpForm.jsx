@@ -27,7 +27,7 @@ const SignUpForm = () => {
 
     //makes post request to api
     axios.post('http://127.0.0.1:8000/accounts/', formData)
-    .then(response => {console.log("success", response.data); window.location.href = 'http://localhost:5173/login'})
+    .then(response => {console.log("success", response.data); window.location.href = 'http://localhost:5173/login';})
     .catch(error => {console.log(error)})
   }
   
@@ -86,7 +86,7 @@ const SignUpForm = () => {
         </div>
         <div className="text-center mt-12">
           <p className="text-sm font-bold text-white"> Already have an account?</p>
-          <button type='button' className="px-4 py-2 text-cat-primary bg-white border border-cat-primary rounded-full hover:bg-orange-100 font-bold font-lilita focus:outline-none focus:ring w-32 mt-2">Sign in</button>
+          <a href="/login"><button type='button' className="px-4 py-2 text-cat-primary bg-white border border-cat-primary rounded-full hover:bg-orange-100 font-bold font-lilita focus:outline-none focus:ring w-32 mt-2">Sign in</button></a>
         </div>
       </div>
     </div>
