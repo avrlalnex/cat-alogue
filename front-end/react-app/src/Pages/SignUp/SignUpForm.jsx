@@ -57,11 +57,25 @@ const SignUpForm = () => {
               </div>
             </div>
 
+            <div className="flex justify-center mb-4">
+              <div className="w-84">
+                <input role='input' type='text'placeholder='Facebook Link' className="w-96 px-4 py-2 border rounded-full border-cat-primary focus:outline-none focus:border-cat-primary" name = "email_address" value = {formData.email_address} onChange = {handleChange} required/>
+              </div>
+            </div>
+
+            <div className="flex justify-center mb-4">
+              <div className="w-84">
+                <input role='input' type='text'placeholder='Home Address' className="w-96 px-4 py-2 border rounded-full border-cat-primary focus:outline-none focus:border-cat-primary" name = "email_address" value = {formData.email_address} onChange = {handleChange} required/>
+              </div>
+            </div>
+
             <div className="flex justify-center mb-6">
               <div className="w-84">
                 <input role='input' type='password' placeholder='Password' className="w-96 px-4 py-2 border rounded-full border-cat-primary focus:outline-none focus:border-cat-primary" name = "password" value = {formData.password} onChange = {handleChange} required/>
               </div>
             </div>
+
+
 
             <div className="flex justify-center mb-6">
               <button role='input' type='submit' className="px-4 py-2 text-white bg-cat-primary rounded-full hover:bg-cat-primary font-bold font-lilita focus:outline-none focus:ring w-32">Sign Up</button>

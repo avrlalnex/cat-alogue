@@ -113,7 +113,7 @@ const CatIn = () => {
                         </tr>
                     <tr>
                         <td className="title">Birthdate</td>
-                        <td className="w-1/6"><TextInput id="birthdate" type="date" name = "CatBirthday" value =  {formData.CatBirthday} onChange = {handleChange} required/></td>
+                        <td className="w-1/6"><TextInput id="birthdate" type="date" name = "CatBirthday" value =  {formData.CatBirthday} onChange = {handleChange} max={new Date().toLocaleDateString('fr-ca')} required/></td>
                         <td className="title w-24 leading-tight">Age (Years)</td>
                         <td className=" md:w-3"><TextInput className="w-16" id="age" type="number" placeholder="0" name = "CatAge" value = {formData.CatAge} onChange = {handleChange} required /></td>
                         <td className="title w-1/12">Gender</td>
