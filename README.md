@@ -25,6 +25,8 @@ Cat-alogue is a web application that serves as a platform for aspiring pet-owner
   Cat-alogue also has an admin dashboard that allows admins of the website to oversee all of the data that's running the website. This includes manually adding customers, verifying customer and cat-owner accounts, and many more.
 
 ## Entity Relationship Diagram
+<img src="front-end/react-app/src/assets/erd.png" alt="erd">
+
 
 ## Tech Stack
 **<h3> [Frontend](front-end)</h3>**
@@ -42,7 +44,8 @@ Cat-alogue is a web application that serves as a platform for aspiring pet-owner
 </p>
 
 ## Cat-alogue (Screenshots)
-
+ <img src="front-end/react-app/src/assets/login.gif" alt="Login"> <br/>
+  <img src="front-end/react-app/src/assets/homesection.gif" alt="Home">
 
 ## Contributors
 
