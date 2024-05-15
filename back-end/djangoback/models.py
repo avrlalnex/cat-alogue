@@ -23,6 +23,7 @@ class Cat (models.Model):
     CatImage = models.ImageField(upload_to = "post_images", default = None, null = True)
     CatDescription = models.CharField(max_length = 1000, default = "No Input")
     CatBirthday = models.DateField(default = None, null = True, blank = True)
+    CatAdoption = models.BooleanField(default=False)
 
 class CatImage(models.Model):
     catImage = models.ImageField(upload_to = "", default = None, null = True)

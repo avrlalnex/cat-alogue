@@ -50,7 +50,7 @@ const AccountCats = () => {
             <a href="/cat/add"><button className="bg-cat-primary shadow-md px-10 py-2 text-lg w-auto text-white rounded-full font-main">Add Cat</button></a>
             </div>
             <div className="mt-5 rounded-3xl h-auto p-10 py-14 bg-cat-primary/30 ">
-                <CatGallery accountCats = {accountCats} profile="1" />
+                <CatGallery adoption = {true} accountCats = {accountCats} profile="1" />
             </div>
             </div>
 

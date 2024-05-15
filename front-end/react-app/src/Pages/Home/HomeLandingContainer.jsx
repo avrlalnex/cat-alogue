@@ -6,6 +6,7 @@ import cat2 from './../../assets/cat2.png';
 const HomeLandingContainer = () => {
   useEffect(() => {
     document.body.style.overflowX = 'hidden';
+    console.log(localStorage.getItem('account'))
     return () => {
       document.body.style.overflowX = 'auto';
     };

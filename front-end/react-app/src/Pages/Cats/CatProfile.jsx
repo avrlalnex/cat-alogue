@@ -9,7 +9,7 @@ import { useState, useEffect} from "react";
 
 const CatProfile = (props) => {
 
-    const [cat, setCat] = useState({CatName: "", CatBirthday: "", CatBreed: "", CatColor: "", CatDescription: "", CatDislikes : "", CatGender: "", CatImage: "", CatLikes: "", CatPersonality: ""})
+    const [cat, setCat] = useState({CatName: "", CatBirthday: "", CatBreed: "", CatColor: "", CatDescription: "", CatDislikes : "", CatGender: "", CatImage: "", CatLikes: "", CatPersonality: "", CatAdoption: ""})
     const [owner, setOwner] = useState({username: "", email_address:""})
     const request = { id: localStorage.getItem('cat')};
     
@@ -93,6 +93,7 @@ const CatProfile = (props) => {
             </div>
         </div>
         <div className="lg:w-1/4 md:w-full bg-cat-secondary lg:p-10 md:px-20 sm:px-20 flex flex-col gap-6">
+            <div className = "self-center">{cat.CatAdoption ? <div>ADOPTED✔</div> : <div>LOOKING FOR HOME✔</div> }</div>
         <div className = "lg:w-full lg:scale-100 md:scale-75 sm:scale-75 aspect-square overflow-hidden rounded-full lg:mb-5 md:mb-2"> 
             <img aria-label='cat-pic' src={`http://127.0.0.1:8000/${cat.CatImage}`} alt="sample cat" className="w-full"/>
         </div>

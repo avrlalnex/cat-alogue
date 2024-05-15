@@ -139,7 +139,7 @@ def account_favorites(request):
                 account.favoriteCats.add(child1)
         return Response("put request")
     
-@api_view(['GET','PUT'])
+@api_view(['GET','PUT', 'POST'])
 def catProfile(request):  
     if request.method == 'GET':
             param1 = request.GET.get('param1')
@@ -147,6 +147,11 @@ def catProfile(request):
             cats = Cat.objects.filter(CatOwner = account)
             serializer = CatSerializer(cats, many=True)
             return Response(serializer.data)
+    if request.method == 'POST':
+        cat = Cat.objects.get(id = request.data['id'])
+        cat.CatAdoption = True
+        cat.save()
+        return Response("")
     if request.method == 'PUT':
         try:
             # Parse the JSON data from the request

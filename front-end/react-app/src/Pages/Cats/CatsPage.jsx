@@ -61,11 +61,9 @@ const CatsPage = () => {
     
     <div>
         <Banner/>
-        <WeeklyCats/>
+        <WeeklyCats adoption = {false} catDetails = {catDetails}/>
         <div className="flex lg:flex-row sm:flex-col h-auto bg-cat-secondary">
             <div className="lg:w-1/6 sm:w-full p-10 flex flex-col sm:items-center lg:items-start gap-2 ">
-            <Filter name="Breed" drop="1"/>
-            <Filter name="Color" drop="1"/>
             <Filter name="Liked" drop="1"/>
             </div>
             <div className="w-full h-auto p-10">

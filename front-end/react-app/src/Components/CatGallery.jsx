@@ -1,11 +1,28 @@
-import React from 'react';
 import Catbox from "./CatBox";
-
+import React, { useState , useEffect} from 'react'
 import sample_pic from '../assets/mocha_sample.jpeg'
+
 
 const CatGallery = (props) => {
 
+    const [adoption, setAdoption] = useState(false)
+    
+
+
+    useEffect(() => {
+        if (props.adoption ==true){
+            setAdoption(true)
+        }
+        else{
+            setAdoption(false)
+        }
+
+
+    },[])
+
     var columns = parseInt(props.profile)? 3 : 4;
+
+
     return ( <>
 
         {parseInt(props.profile)?
@@ -16,8 +33,10 @@ const CatGallery = (props) => {
                 <Catbox 
                     featured="0"
                     id = {catDetail.id}
+                    adoption = {adoption}
                     click={() => {handleFavorite(catDetail.id)}}
                     favorite="true"
+                    favoritePage = {props.favoritePage}
                     name={catDetail.CatName}
                     image={`http://127.0.0.1:8000/${catDetail.CatImage}`}
                 />

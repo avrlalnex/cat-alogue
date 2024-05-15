@@ -69,7 +69,7 @@ const AccountFave = () => {
             <div aria-label="details" className="w-full h-auto">
             <span className="text-5xl text-cat-primary font-main">Favorites</span>
             <div className="mt-5 rounded-3xl h-auto p-10 py-14 bg-cat-primary/30 ">
-                <CatGallery accountCats = {catId} condition = {true} profile="1"/>
+                <CatGallery favoritePage = {true} accountCats = {catId} condition = {true} profile="1"/>
             </div>
             </div>
 
