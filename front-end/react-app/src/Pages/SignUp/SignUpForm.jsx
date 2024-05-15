@@ -8,7 +8,9 @@ const SignUpForm = () => {
   const [formData, setFormData] = useState({
     username: '',
     email_address: '',
-    password: ''
+    password: '',
+    facebookAccount: '',
+    address: '',
   });
   
   const handleChange = (event) => {
@@ -59,13 +61,13 @@ const SignUpForm = () => {
 
             <div className="flex justify-center mb-4">
               <div className="w-84">
-                <input role='input' type='text'placeholder='Facebook Link' className="w-96 px-4 py-2 border rounded-full border-cat-primary focus:outline-none focus:border-cat-primary" name = "email_address" value = {formData.email_address} onChange = {handleChange} required/>
+                <input role='input' type='text'placeholder='Facebook Link' className="w-96 px-4 py-2 border rounded-full border-cat-primary focus:outline-none focus:border-cat-primary" name = "facebookAccount" value = {formData.facebookAccount} onChange = {handleChange} required/>
               </div>
             </div>
 
             <div className="flex justify-center mb-4">
               <div className="w-84">
-                <input role='input' type='text'placeholder='Home Address' className="w-96 px-4 py-2 border rounded-full border-cat-primary focus:outline-none focus:border-cat-primary" name = "email_address" value = {formData.email_address} onChange = {handleChange} required/>
+                <input role='input' type='text'placeholder='Home Address' className="w-96 px-4 py-2 border rounded-full border-cat-primary focus:outline-none focus:border-cat-primary" name = "address" value = {formData.address} onChange = {handleChange} required/>
               </div>
             </div>
 

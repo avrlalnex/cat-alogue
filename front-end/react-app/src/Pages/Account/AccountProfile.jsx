@@ -10,7 +10,7 @@ const AccountProfile = () => {
 
     const request = {account: localStorage.getItem("username")}
 
-    const [profile, setProfile] = useState({username: "", email_address : "", })   
+    const [profile, setProfile] = useState({username: "", email_address : "", facebookAccount: "", address: ""})   
     useEffect(() => {
         const fetchData = async () => {
             try {       
@@ -19,7 +19,7 @@ const AccountProfile = () => {
                 'Content-Type': 'application/json'
               }
             });
-            console.log(response.data.profile)
+            console.log(response.data)
             setProfile(response.data.profile)
 
           } catch (error) {
@@ -42,14 +42,14 @@ const AccountProfile = () => {
                     <div className="bg-cat-primary p-8 mt-2 grid lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-3 gap-3 grid-rows-3 rounded-2xl text-lg w-full h-auto items-center">
                     <div className="col-span-1  px-3 text-white text-end">Name</div>
                     <div className="lg:col-span-3 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary text-cat-details text-sm rounded-lg bg-cat-secondary">Aaron Macias</div>
-                    <div className="col-span-1 px-3 text-white text-end">Age</div>
-                    <div className="lg:col-span-1 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary  text-cat-details text-sm rounded-lg bg-cat-secondary">21</div>
+                    <div className="col-span-1 px-3 text-white text-end"></div>
+                    <div className="lg:col-span-1 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary  text-cat-details text-sm rounded-lg"></div>
                     <div className="col-span-1 px-3 text-white text-end">Email</div>
                     <div className="lg:col-span-2 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary text-cat-details text-sm rounded-lg bg-cat-secondary">{profile.email_address}</div>
                     <div className="col-span-1 px-3 text-white text-end">Facebook</div>
-                    <div className="lg:col-span-2 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary text-cat-details text-sm rounded-lg bg-cat-secondary">Aaron Macias</div>
+                    <div className="lg:col-span-2 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary text-cat-details text-sm rounded-lg bg-cat-secondary">{profile.facebookAccount}</div>
                     <div className="col-span-1  px-3 text-white text-end">Address</div>
-                    <div className="lg:col-span-5 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary text-cat-details text-sm rounded-lg bg-cat-secondary">Bangkal, Davao City</div>
+                    <div className="lg:col-span-5 md:col-span-2 sm:col-span-2 py-2 px-4 font-secondary text-cat-details text-sm rounded-lg bg-cat-secondary">{profile.address}</div>
                     </div>
                 </div>
                 </div>
