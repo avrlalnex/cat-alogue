@@ -157,11 +157,17 @@ def catProfile(request):
 
             cat_id = data['id']
             hello = Cat.objects.get(id = cat_id)
+            #owner = Accounts.objects.get(id = hello.CatOwner.id)
+            print(hello.CatOwner)
            
             serializer = CatSerializer(hello, data=data, partial=True)
+            accountSerializer = AccountSerializer(hello.CatOwner, data = data, partial = True)
+  
             if serializer.is_valid():
                     serializer.save()
-                    return Response({'cat': serializer.data}, status=status.HTTP_200_OK)
+                    if accountSerializer.is_valid():
+                        accountSerializer.save()
+                        return Response({'cat': serializer.data, 'owner': accountSerializer.data}, status=status.HTTP_200_OK)
             return JsonResponse(serializer.data, status=status.HTTP_200_OK)
         except json.JSONDecodeError:
             return Response({'error': 'Invalid JSON'}, status=status.HTTP_400_BAD_REQUEST)
