@@ -52,7 +52,13 @@ class CatView(APIView):
         return Response("")
 
     def post(self, request):  
-            serializer = CatSerializer(data=request.data)
+            requestData = request.data
+            #print(request.data['CatOwner'])
+            owner = Accounts.objects.get(id = request.data['CatOwner'])
+            requestData['CatOwner'] = owner.id  
+            print(requestData)
+
+            serializer = CatSerializer(data=requestData)
             print(serializer)
             if serializer.is_valid():
                 serializer.save()
@@ -64,25 +70,19 @@ class CatView(APIView):
           
 @api_view(['GET', 'PUT', 'DELETE'])       
 def account_detail(request):
-    try:
-        account = Accounts.objects.get(pk = id)
-    except Accounts.DoesNotExist:
-        return Response(status = status.HTTP_404_NOT_FOUND)
-
-    if request.method == 'GET': #returns singular account
-        serializer = AccountSerializer(account)
-        return Response(serializer.data) 
     
-    elif request.method == 'PUT':  #changes account details
-        serializer = AccountSerializer(account, data = request.data)
+    if request.method == 'PUT': #returns singular account
+        data = request.data
+        accountDetail = Accounts.objects.get(username = request.data['account'])
+        print(accountDetail)
+        serializer = AccountSerializer(accountDetail, data=data, partial=True)
         if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        else:
-            return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
+                serializer.save()
+                return Response({'profile': serializer.data}, status=status.HTTP_200_OK)
+        return Response("error")
+        
 
     elif request.method == 'DELETE': #deletes account
-        account.delete()
         return Response(status = status.HTTP_204_NO_CONTENT)
 
     elif request.method == 'POST':
@@ -139,8 +139,14 @@ def account_favorites(request):
                 account.favoriteCats.add(child1)
         return Response("put request")
     
-@api_view(['PUT'])
+@api_view(['GET','PUT'])
 def catProfile(request):  
+    if request.method == 'GET':
+            param1 = request.GET.get('param1')
+            account = Accounts.objects.get(username = param1)
+            cats = Cat.objects.filter(CatOwner = account)
+            serializer = CatSerializer(cats, many=True)
+            return Response(serializer.data)
     if request.method == 'PUT':
         try:
             # Parse the JSON data from the request
@@ -156,8 +162,6 @@ def catProfile(request):
             if serializer.is_valid():
                     serializer.save()
                     return Response({'cat': serializer.data}, status=status.HTTP_200_OK)
-        
-
             return JsonResponse(serializer.data, status=status.HTTP_200_OK)
         except json.JSONDecodeError:
             return Response({'error': 'Invalid JSON'}, status=status.HTTP_400_BAD_REQUEST)

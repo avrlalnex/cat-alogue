@@ -22,8 +22,6 @@ const CatProfile = (props) => {
             'Content-Type': 'application/json'
           }
         });
-
-        // Log the response data
         console.log(response.data.cat);
         setCat(response.data.cat)
       } catch (error) {

@@ -1,7 +1,7 @@
 import Header from "../../Components/Header";
 import Footing from "../../Components/Footing";
 import "./CatIn.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from 'axios';
 import { TextInput, Select, FileInput, Textarea} from "flowbite-react"
 
@@ -22,7 +22,27 @@ const CatIn = () => {
         CatBirthday: '',
       });
 
-      
+    const request = {account: localStorage.getItem("username")}
+    useEffect(() => {
+        const fetchData = async () => {
+            try {       
+            const response = await axios.put('http://127.0.0.1:8000/accounts/detail', request, {
+              headers: {
+                'Content-Type': 'application/json'
+              }
+            });
+            setFormData({...formData, CatOwner: response.data})
+
+          } catch (error) {
+            // Handle errors
+            console.error('Error making PUT request:', error);
+          }
+        };
+        // Call the async function inside useEffect
+        fetchData();
+    }, [])
+
+    
       const handleChange = (event) => {
         setFormData({
         ...formData,
@@ -57,7 +77,7 @@ const CatIn = () => {
       form_data.append("CatDislikes", formData.CatDislikes)
       form_data.append("CatDescription", formData.CatDescription)
       form_data.append("CatBirthday", formData.CatBirthday)
-      //form_data.append("CatOwner", formData.CatOwner)
+      form_data.append("CatOwner", formData.CatOwner.profile.id)
       
 
 

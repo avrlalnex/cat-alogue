@@ -16,7 +16,7 @@ class Cat (models.Model):
     CatPersonality = models.CharField(max_length = 200)
     CatLikes = models.CharField(max_length = 200)
     CatDislikes = models.CharField(max_length =200)
-    CatOwner = models.ForeignKey('Owner', on_delete = models.CASCADE, default = None, null = True, blank = True)
+    CatOwner = models.ForeignKey('Accounts', on_delete = models.CASCADE, default = None, null = True, blank = True)
     CatImage = models.ImageField(upload_to = "post_images", default = None, null = True)
     CatDescription = models.CharField(max_length = 1000, default = "No Input")
     CatBirthday = models.DateField(default = None, null = True, blank = True)

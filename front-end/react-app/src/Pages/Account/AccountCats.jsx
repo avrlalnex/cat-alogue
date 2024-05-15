@@ -4,10 +4,40 @@ import CatGallery from "../../Components/CatGallery";
 import AccountSidebar from "../../Components/AccountSidebar";
 import { Link } from "react-router-dom";
 import { Button } from "flowbite-react";
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 
 
 const AccountCats = () => {
+
+    const request = {account: localStorage.getItem("username")}
+    const [accountCats, setAccountCats] = useState([{}])
+
+    useEffect(() => {
+        console.log("hello")
+        const fetchData = async () => {
+            try {       
+                const response = await axios.get('http://127.0.0.1:8000/catprofile/', {
+                    params: {
+                        // Add your query parameters here
+                        param1: request.account
+                    },
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                console.log(response.data)
+                setAccountCats(response.data)
+          } catch (error) {
+            // Handle errors
+            console.error('Error making PUT request:', error);
+          }
+        };
+        // Call the async function inside useEffect
+        fetchData();
+    }, [])
+
+
     return ( <>
     <Header/>
     <div className="bg-cat-secondary h-auto flex flex-row justify-center font-main">
@@ -20,7 +50,7 @@ const AccountCats = () => {
             <a href="/cat/add"><button className="bg-cat-primary shadow-md px-10 py-2 text-lg w-auto text-white rounded-full font-main">Add Cat</button></a>
             </div>
             <div className="mt-5 rounded-3xl h-auto p-10 py-14 bg-cat-primary/30 ">
-                <CatGallery profile="1" />
+                <CatGallery accountCats = {accountCats} profile="1" />
             </div>
             </div>
 
